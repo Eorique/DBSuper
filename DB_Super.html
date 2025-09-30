@@ -1,0 +1,282 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DB Super - Banco de Dados para Pequenas Empresas</title>
+    <style>
+        /* --- Reset Básico e Estilos Gerais --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+
+        /* --- Paleta de Cores --- */
+        :root {
+            --cor-primaria-azul: #003366; /* Azul escuro para fundos e títulos */
+            --cor-secundaria-azul: #005A9C; /* Azul médio para elementos de interface */
+            --cor-destaque-laranja: #ff6600; /* Laranja vibrante para botões e links */
+            --cor-texto-claro: #f4f4f4;
+            --cor-fundo-claro: #f9f9f9;
+        }
+
+        /* --- Cabeçalho e Navegação --- */
+        header {
+            background: var(--cor-primaria-azul);
+            color: var(--cor-texto-claro);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid var(--cor-destaque-laranja);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+        }
+        
+        header h1 span {
+            color: var(--cor-destaque-laranja);
+        }
+
+        header nav ul {
+            list-style: none;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin-left: 20px;
+        }
+
+        header nav a {
+            color: var(--cor-texto-claro);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        header nav a:hover {
+            color: var(--cor-destaque-laranja);
+        }
+
+        /* --- Seção de Destaque (Hero) --- */
+        .hero {
+            background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)), url('https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding-top: 80px; /* Para compensar o cabeçalho fixo */
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-button {
+            background: var(--cor-destaque-laranja);
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #e65c00;
+        }
+
+        /* --- Seções de Conteúdo --- */
+        section {
+            padding: 60px 0;
+        }
+
+        section#servicos {
+            background: var(--cor-fundo-claro);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--cor-primaria-azul);
+            margin-bottom: 40px;
+        }
+
+        /* --- Cards de Serviços --- */
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .servico-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            border-left: 5px solid var(--cor-secundaria-azul);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .servico-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .servico-card h3 {
+            color: var(--cor-secundaria-azul);
+            margin-bottom: 15px;
+        }
+
+        /* --- Seção Sobre e Contato --- */
+        #sobre p {
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+        }
+        
+        #contato {
+            background-color: var(--cor-fundo-claro);
+        }
+
+        #contato p {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-link {
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        /* --- Rodapé --- */
+        footer {
+            background: var(--cor-primaria-azul);
+            color: var(--cor-texto-claro);
+            text-align: center;
+            padding: 20px 0;
+            border-top: 3px solid var(--cor-destaque-laranja);
+        }
+
+        /* --- Responsividade --- */
+        @media(max-width: 768px) {
+            header .container {
+                flex-direction: column;
+            }
+
+            header nav {
+                margin-top: 10px;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>DB<span>Super</span></h1>
+            <nav>
+                <ul>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Otimize seus Dados, Potencialize seu Negócio</h2>
+            <p>Soluções de banco de dados personalizadas para pequenas empresas. Organizamos suas informações para que você foque no crescimento.</p>
+            <a href="#contato" class="cta-button">Solicite uma Consultoria</a>
+        </section>
+
+        <section id="servicos">
+            <div class="container">
+                <h2 class="section-title">Nossos Serviços</h2>
+                <div class="servicos-grid">
+                    <div class="servico-card">
+                        <h3>Modelagem de Banco de Dados</h3>
+                        <p>Criamos a estrutura ideal para seus dados, garantindo eficiência, segurança e escalabilidade para o futuro.</p>
+                    </div>
+                    <div class="servico-card">
+                        <h3>Otimização e Performance</h3>
+                        <p>Analisamos e ajustamos seu banco de dados atual para que ele funcione de forma mais rápida e confiável.</p>
+                    </div>
+                    <div class="servico-card">
+                        <h3>Business Intelligence (BI)</h3>
+                        <p>Transformamos seus dados brutos em dashboards e relatórios inteligentes que facilitam a tomada de decisões.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre">
+            <div class="container">
+                <h2 class="section-title">Motivações</h2>
+                <p>A DB Super nasceu da necessidade de oferecer tecnologia de banco de dados de ponta para o mercado de pequenas e médias empresas. Acreditamos que o gerenciamento inteligente de dados não deve ser um privilégio de grandes corporações. Nossa missão é fornecer sistemas robustos, seguros e fáceis de usar que impulsionam o sucesso dos nossos clientes.</p>
+            </div>
+        </section>
+        
+        <section id="contato">
+            <div class="container">
+                <h2 class="section-title">Vamos Conversar?</h2>
+                <p>Envie-nos uma mensagem para agendar uma avaliação gratuita das suas necessidades de dados.</p>
+                <a href="mailto:contato@dbsolutions.com" class="cta-button contact-link">DBSuper@gmail.com</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 DB Super. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
