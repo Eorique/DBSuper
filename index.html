@@ -2,545 +2,206 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DBSuper - Banco de Dados para Pequenas Empresas</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Nossa História Infinita ✨</title>
     <style>
-        /* Base Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Variáveis de Cores e Fontes */
         :root {
-            --cor-principal-fundo: #000000; /* Preto total */
-            --cor-secundaria-fundo: #1a1a1a; /* Preto mais suave para seções */
-            --cor-destaque-roxo: #7B00F7; /* Roxo vibrante */
-            --cor-destaque-roxo-hover: #5D00C0; /* Roxo mais escuro para hover */
-            --cor-texto-claro: #f8f8f8; /* Branco/Off-white para texto */
-            --cor-texto-secundario: #cccccc; /* Cinza claro para detalhes */
-            --font-titulo: 'Montserrat', sans-serif;
-            --font-corpo: 'Open Sans', sans-serif;
+            --pink: #ff758c;
+            --purple: #7158e2;
+            --glass: rgba(255, 255, 255, 0.1);
+        }
+        
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow-x: hidden; background: #050505; font-family: 'Segoe UI', sans-serif; scroll-behavior: smooth; }
+        canvas { position: fixed; top: 0; left: 0; z-index: -1; }
+
+        /* --- CENA 1: ENTRADA --- */
+        #scene1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            transition: all 1s ease;
+        }
+        .welcome-card {
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(20px);
+            padding: 60px;
+            border-radius: 40px;
+            text-align: center;
+            color: white;
+            border: 1px solid var(--pink);
         }
 
-        body {
-            line-height: 1.6;
-            font-family: var(--font-corpo);
-            color: var(--cor-texto-secundario);
-            background: var(--cor-principal-fundo);
-        }
+        /* --- CENA 2: CONTEÚDO --- */
+        #scene2 { display: none; opacity: 0; width: 100%; transition: opacity 1.5s; }
 
         .container {
-            width: 90%;
-            max-width: 1100px;
-            margin: auto;
-            overflow: hidden;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            background: var(--cor-principal-fundo);
-            color: var(--cor-texto-claro);
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.5); /* Sombra mais acentuada */
-        }
-
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header h1 {
-            font-family: var(--font-titulo);
-            font-size: 2rem;
-            letter-spacing: 1px;
-        }
-
-        header h1 span {
-            color: var(--cor-destaque-roxo);
-        }
-
-        header nav ul {
-            list-style: none;
-        }
-
-        header nav ul li {
-            display: inline;
-            margin-left: 25px;
-        }
-
-        header nav a {
-            color: var(--cor-texto-claro);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease, transform 0.3s ease;
-            position: relative;
-        }
-
-        header nav a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--cor-destaque-roxo);
-            left: 0;
-            bottom: -5px;
-            transition: width 0.3s ease;
-        }
-
-        header nav a:hover::after {
-            width: 100%;
-        }
-
-        header nav a:hover {
-            color: var(--cor-destaque-roxo);
-            transform: translateY(-2px);
-        }
-
-        .menu-toggle {
-            display: none;
-            font-size: 1.8rem;
-            background: none;
-            border: none;
-            color: var(--cor-texto-claro);
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-            height: 70vh; /* Altura maior */
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            text-align: center;
-            color: var(--cor-texto-claro);
-            padding-top: 100px; /* Espaço para o header fixo */
-            position: relative;
-            overflow: hidden;
+            padding: 100px 20px;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.6); /* Overlay mais escuro */
-            z-index: 1;
-        }
-
-        .hero > * { /* Garante que o conteúdo fique acima do overlay */
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h2 {
-            font-family: var(--font-titulo);
-            font-size: 3.2rem; /* Título maior */
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-        }
-
-        .hero p {
-            font-family: var(--font-corpo);
-            font-size: 1.3rem; /* Texto maior */
-            max-width: 700px;
-            margin-bottom: 2rem;
-            font-weight: 300;
-        }
-
-        .cta-button {
-            background: var(--cor-destaque-roxo);
-            color: var(--cor-texto-claro);
-            padding: 15px 35px; /* Botão maior */
-            text-decoration: none;
-            border-radius: 50px; /* Borda mais arredondada */
-            font-weight: bold;
-            font-size: 1.2rem;
-            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-
-        .cta-button:hover {
-            background: var(--cor-destaque-roxo-hover);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-        }
-
-        /* Seções Gerais */
-        section {
-            padding: 80px 0; /* Mais espaçamento */
-            background: var(--cor-secundaria-fundo);
-            border-bottom: 1px solid rgba(255,255,255,0.05); /* Separador sutil */
-        }
-
-        section#servicos {
-            background: var(--cor-principal-fundo); /* Fundo preto puro */
-        }
-
-        .section-title {
-            text-align: center;
-            font-family: var(--font-titulo);
-            font-size: 2.8rem; /* Título maior */
-            color: var(--cor-destaque-roxo);
-            margin-bottom: 60px; /* Mais espaçamento */
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 4px;
-            background: var(--cor-destaque-roxo);
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: 0;
-            border-radius: 2px;
-        }
-        
-        /* Serviços Grid */
-        .servicos-grid {
+        /* MURAL DE FOTOS */
+        .photo-mural {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px; /* Mais espaçamento entre cards */
+            gap: 30px;
+            width: 90%;
+            max-width: 1200px;
+            margin-bottom: 150px;
         }
-
-        .servico-card {
-            background: var(--cor-secundaria-fundo);
-            padding: 30px;
-            border-radius: 12px; /* Mais arredondado */
-            box-shadow: 0 6px 20px rgba(0,0,0,0.4); /* Sombra mais pronunciada */
-            text-align: center;
-            border-bottom: 4px solid var(--cor-destaque-roxo); /* Borda roxa embaixo */
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        .photo-card {
+            background: white;
+            padding: 12px 12px 45px 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
-            position: relative;
-            overflow: hidden;
         }
+        .photo-card img { width: 100%; height: 300px; object-fit: cover; }
+        .photo-card:hover { transform: scale(1.08) rotate(0deg) !important; z-index: 10; }
 
-        .servico-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, rgba(123,0,247,0.1) 0%, transparent 70%); /* Gradiente sutil */
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .servico-card:hover::before {
-            opacity: 1;
-        }
-
-        .servico-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.6);
-            background-color: #0d0d0d; /* Fundo levemente mais escuro no hover */
-        }
-
-        .servico-card h3 {
-            font-family: var(--font-titulo);
-            color: var(--cor-destaque-roxo);
-            margin-bottom: 20px;
-            font-size: 1.6rem;
-        }
-        
-        .servico-card p {
-            color: var(--cor-texto-secundario);
-            font-size: 1rem;
-            margin-bottom: 15px;
-        }
-
-        .servico-card .extra-info {
-            display: none;
-            margin-top: 15px;
-            font-size: 0.9rem;
-            color: var(--cor-texto-secundario);
-            opacity: 0.8;
-            font-style: italic;
-        }
-
-        .servico-card.active .extra-info {
-            display: block;
-        }
-
-        /* Sobre Nós */
-        #sobre {
-            background: var(--cor-principal-fundo);
-            color: var(--cor-texto-claro);
-        }
-
-        #sobre p {
-            font-family: var(--font-corpo);
-            text-align: center;
-            max-width: 900px;
-            margin: auto;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--cor-texto-secundario);
-        }
-
-        #sobre .section-title {
-            color: var(--cor-texto-claro); /* Título claro no fundo escuro */
-        }
-
-
-        /* Contato */
-        #contato {
-            background-color: var(--cor-secundaria-fundo);
-            color: var(--cor-texto-claro);
-        }
-
-        #contato .section-title {
-            color: var(--cor-destaque-roxo);
-        }
-
-        .contact-options {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            margin: 40px auto;
-            max-width: 600px;
-        }
-
-        .contact-link {
-            width: 100%;
-            text-align: center;
-            padding: 15px 30px;
-            border-radius: 50px;
-            background: var(--cor-destaque-roxo);
-            color: var(--cor-texto-claro);
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-
-        .contact-link:hover {
-            background: var(--cor-destaque-roxo-hover);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-        }
-
-        .contact-link i {
+        /* SEÇÃO DO TEXTÃO (CARTA) */
+        .letter-section {
+            max-width: 850px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(15px);
+            color: #f0f0f0;
+            padding: 80px 60px;
+            border-radius: 40px;
+            line-height: 2.2;
             font-size: 1.3rem;
+            border: 1px solid rgba(255, 117, 140, 0.3);
+            box-shadow: 0 0 100px rgba(0,0,0,0.8);
+            margin-bottom: 200px;
+            position: relative;
         }
 
-        /* Footer */
-        footer {
-            background: var(--cor-principal-fundo);
-            color: var(--cor-texto-secundario);
+        .letter-section h2 {
+            font-size: 3rem;
+            color: var(--pink);
+            margin-bottom: 40px;
             text-align: center;
-            padding: 30px 0;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            font-size: 0.9rem;
+            font-family: 'Georgia', serif;
         }
 
-        /* Media Queries */
-        @media(max-width: 768px) {
-            header .container {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+        .letter-content p { margin-bottom: 30px; text-indent: 30px; }
 
-            header nav {
-                margin-top: 15px;
-                display: none;
-                width: 100%;
-                text-align: center;
-                background: var(--cor-principal-fundo);
-                padding: 10px 0;
-                box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            }
-
-            header nav.active {
-                display: block;
-            }
-
-            header nav ul li {
-                display: block;
-                margin: 15px 0;
-            }
-
-            .menu-toggle {
-                display: block;
-                position: absolute;
-                right: 20px;
-                top: 20px;
-            }
-
-            .hero {
-                height: 80vh;
-                padding-top: 120px;
-            }
-
-            .hero h2 {
-                font-size: 2.2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .cta-button {
-                padding: 12px 25px;
-                font-size: 1rem;
-            }
-
-            .section-title {
-                font-size: 2.2rem;
-            }
-
-            .servicos-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-options {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .contact-link {
-                padding: 12px 20px;
-                font-size: 1rem;
-            }
+        .signature {
+            text-align: right;
+            margin-top: 60px;
+            font-family: 'Brush Script MT', cursive;
+            font-size: 2.5rem;
+            color: var(--pink);
         }
 
-        @media(min-width: 769px) {
-            .contact-options {
-                flex-direction: row;
-                justify-content: center;
-                gap: 30px;
-            }
+        .btn-enter {
+            padding: 20px 60px;
+            font-size: 1.2rem;
+            background: linear-gradient(45deg, var(--pink), var(--purple));
+            border: none;
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(255, 117, 140, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        /* Divisória fofa */
+        .divider {
+            margin: 100px 0;
+            color: var(--pink);
+            font-size: 2rem;
+            letter-spacing: 15px;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <h1>DB<span>Super</span></h1>
-            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-            <nav>
-                <ul>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#sobre">Sobre Nós</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
+    <canvas id="bg"></canvas>
+
+    <div id="scene1">
+        <div class="welcome-card">
+            <h1>Oii, meu amor... ❤️</h1>
+            <p>Eu guardei algo aqui dentro. Quer ver?</p>
+            <button class="btn-enter" onclick="startSurprise()">Abrir nosso mundo</button>
         </div>
-    </header>
+    </div>
 
-    <main>
-        <section class="hero">
-            <h2>Otimize seus Dados, Potencialize seu Negócio</h2>
-            <p>Soluções de banco de dados personalizadas para pequenas empresas. Organizamos suas informações para que você foque no crescimento.</p>
-            <a href="#contato" class="cta-button">Solicite uma Consultoria</a>
-        </section>
-
-        <section id="servicos">
-            <div class="container">
-                <h2 class="section-title">Nossos Serviços</h2>
-                <div class="servicos-grid">
-                    <div class="servico-card">
-                        <h3>Modelagem de Banco de Dados</h3>
-                        <p>Criamos a estrutura ideal para seus dados, garantindo eficiência, segurança e escalabilidade para o futuro.</p>
-                        <p class="extra-info">Inclui análise de requisitos, design de esquemas, normalização de dados e testes de integridade para garantir um banco de dados robusto e adaptável.</p>
-                    </div>
-                    <div class="servico-card">
-                        <h3>Otimização e Performance</h3>
-                        <p>Analisamos e ajustamos seu banco de dados atual para que ele funcione de forma mais rápida e confiável, maximizando a produtividade.</p>
-                        <p class="extra-info">Técnicas avançadas de indexação, reescrita e otimização de consultas, cache inteligente e manutenção preventiva de rotina.</p>
-                    </div>
-                    <div class="servico-card">
-                        <h3>Business Intelligence (BI)</h3>
-                        <p>Transformamos seus dados brutos em dashboards e relatórios inteligentes que facilitam a tomada de decisões estratégicas e operacionais.</p>
-                        <p class="extra-info">Implementação de ferramentas como Power BI e Tableau, criação de KPIs personalizados e visualizações interativas para insights valiosos.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="sobre">
-            <div class="container">
-                <h2 class="section-title">Motivações</h2>
-                <p>A DBSuper nasceu da necessidade de oferecer tecnologia de banco de dados de ponta para o mercado de pequenas e médias empresas. Acreditamos que o gerenciamento inteligente de dados não deve ser um privilégio de grandes corporações. Nossa missão é fornecer sistemas robustos, seguros e fáceis de usar que impulsionam o sucesso dos nossos clientes, permitindo que se concentrem no que fazem de melhor: crescer seus negócios.</p>
-            </div>
-        </section>
-
-        <section id="contato">
-            <div class="container">
-                <h2 class="section-title">Vamos Conversar?</h2>
-                <div class="contact-options">
-                    <a href="mailto:DBSuper7zz@gmail.com" class="contact-link"><i class="fas fa-envelope"></i>E-mail</a>
-                    <a href="https://wa.me/5511978356569" target="_blank" class="contact-link"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                    <a href="https://instagram.com/dbsuper7z" target="_blank" class="contact-link"><i class="fab fa-instagram"></i> Instagram</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
+    <div id="scene2">
         <div class="container">
-            <p>&copy; 2025 DBSuper. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+            <h1 style="color: white; letter-spacing: 10px; margin-bottom: 80px;">MEMÓRIAS</h1>
+            
+            <div class="photo-mural">
+                <div class="photo-card" style="transform: rotate(-2deg);"><img src="foto1.jpg"></div>
+                <div class="photo-card" style="transform: rotate(3deg);"><img src="foto2.jpg"></div>
+                <div class="photo-card" style="transform: rotate(-4deg);"><img src="foto3.jpg"></div>
+                <div class="photo-card" style="transform: rotate(1deg);"><img src="foto4.jpg"></div>
+                <div class="photo-card" style="transform: rotate(-3deg);"><img src="foto5.jpg"></div>
+                <div class="photo-card" style="transform: rotate(2deg);"><img src="foto6.jpg"></div>
+                <div class="photo-card" style="transform: rotate(4deg);"><img src="foto7.jpg"></div>
+                <div class="photo-card" style="transform: rotate(-1deg);"><img src="foto8.jpg"></div>
+            </div>
 
-    <script>
-        const menuToggle = document.querySelector('.menu-toggle');
-        const nav = document.querySelector('header nav');
+            <div class="divider">--- ♥ ---</div>
 
-        menuToggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
-            menuToggle.textContent = nav.classList.contains('active') ? '✕' : '☰';
-        });
+            <div class="letter-section">
+                <h2>Minha Querida,</h2>
+                <div class="letter-content">
+                    <p>Eu não sabia muito bem como começar a escrever isso, mas percebi que, quando o assunto é você, as palavras fluem como se o meu teclado conhecesse o ritmo do meu coração. Olhar para essas fotos acima me faz perceber o quanto a nossa jornada é única.</p>
+                    
+                    <p>Muitas vezes no dia a dia, a gente acaba não parando para dizer as coisas mais simples e importantes. Quero que você saiba que você é a minha maior inspiração. A forma como você sorri, como você encara a vida e como você me faz sentir o homem mais sortudo do mundo é algo que eu nunca vou conseguir explicar apenas com código.</p>
 
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                window.scrollTo({
-                    top: target.offsetTop - 80, 
-                    behavior: 'smooth'
-                });
-                if (nav.classList.contains('active')) {
-                    nav.classList.remove('active');
-                    menuToggle.textContent = '☰';
-                }
-            });
-        });
+                    <p>Eu te amo não apenas pelo que você é, mas pelo que eu me torno quando estou ao seu lado. Você é meu "porto seguro", minha linha de código mais perfeita, e o motivo de todos os meus commits de felicidade. Se eu pudesse programar o nosso futuro, eu colocaria um loop infinito de viagens, risadas, abraços apertados e muitos cafés da manhã juntos.</p>
 
-        document.querySelectorAll('.servico-card').forEach(card => {
-            card.addEventListener('click', () => {
-                card.classList.toggle('active');
-            });
-        });
-    </script>
+                    <p>Obrigado por ter paciência comigo, por ser minha parceira de todas as horas e por me deixar fazer parte da sua vida. Saiba que, independentemente de qualquer bug que a vida possa trazer, estarei aqui para resolvermos juntos, lado a lado.</p>
+                    
+                    <p>Este é apenas um pequeno gesto para tentar mostrar o tamanho do meu sentimento. Você merece o mundo, e eu pretendo estar lá para te ver conquistar cada pedacinho dele.</p>
+                </div>
+                <div class="signature">Com todo o meu amor, <br> [Seu Nome]</div>
+            </div>
+            
+            <div style="height: 100px;"></div> </div>
+    </div>
+
+<script>
+    // FUNDO DINÂMICO
+    const canvas = document.getElementById('bg');
+    const ctx = canvas.getContext('2d');
+    let time = 0;
+
+    function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    window.addEventListener('resize', resize);
+    resize();
+
+    function draw() {
+        ctx.fillStyle = 'rgba(5, 5, 5, 0.15)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        time += 0.005;
+        for (let i = 0; i < 4; i++) {
+            ctx.beginPath();
+            ctx.strokeStyle = i % 2 === 0 ? '#ff758c15' : '#7158e215';
+            ctx.lineWidth = 150;
+            ctx.moveTo(-100, canvas.height / 2);
+            for (let x = 0; x < canvas.width + 200; x += 50) {
+                let y = canvas.height / 2 + Math.sin(x * 0.001 + time + i) * 200;
+                ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+        }
+        requestAnimationFrame(draw);
+    }
+    draw();
+
+    function startSurprise() {
+        document.getElementById('scene1').style.opacity = '0';
+        setTimeout(() => {
+            document.getElementById('scene1').style.display = 'none';
+            const s2 = document.getElementById('scene2');
+            s2.style.display = 'block';
+            setTimeout(() => { s2.style.opacity = '1'; }, 100);
+        }, 1000);
+    }
+</script>
 </body>
 </html>
