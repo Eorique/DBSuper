@@ -10,8 +10,23 @@
             --glass: rgba(255, 255, 255, 0.1);
         }
         
-        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow-x: hidden; background: #050505; font-family: 'Segoe UI', sans-serif; scroll-behavior: smooth; }
-        canvas { position: fixed; top: 0; left: 0; z-index: -1; }
+        body, html { 
+            margin: 0; 
+            padding: 0; 
+            width: 100%; 
+            height: 100%; 
+            overflow-x: hidden; 
+            background: #050505; 
+            font-family: 'Segoe UI', sans-serif; 
+            scroll-behavior: smooth; 
+        }
+
+        canvas { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            z-index: -1; 
+        }
 
         /* --- CENA 1: ENTRADA --- */
         #scene1 {
@@ -21,6 +36,7 @@
             height: 100vh;
             transition: all 1s ease;
         }
+
         .welcome-card {
             background: rgba(10, 10, 10, 0.7);
             backdrop-filter: blur(20px);
@@ -32,7 +48,12 @@
         }
 
         /* --- CENA 2: CONTEÚDO --- */
-        #scene2 { display: none; opacity: 0; width: 100%; transition: opacity 1.5s; }
+        #scene2 { 
+            display: none; 
+            opacity: 0; 
+            width: 100%; 
+            transition: opacity 1.5s; 
+        }
 
         .container {
             display: flex;
@@ -50,6 +71,7 @@
             max-width: 1200px;
             margin-bottom: 150px;
         }
+
         .photo-card {
             background: white;
             padding: 12px 12px 45px 12px;
@@ -57,8 +79,17 @@
             transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
         }
-        .photo-card img { width: 100%; height: 400px; object-fit: cover; }
-        .photo-card:hover { transform: scale(1.08) rotate(0deg) !important; z-index: 10; }
+
+        .photo-card img { 
+            width: 100%; 
+            height: 400px; 
+            object-fit: cover; 
+        }
+
+        .photo-card:hover { 
+            transform: scale(1.08) rotate(0deg) !important; 
+            z-index: 10; 
+        }
 
         /* SEÇÃO DO TEXTÃO (CARTA) */
         .letter-section {
@@ -84,7 +115,10 @@
             font-family: 'Georgia', serif;
         }
 
-        .letter-content p { margin-bottom: 30px; text-indent: 30px; }
+        .letter-content p { 
+            margin-bottom: 30px; 
+            text-indent: 30px; 
+        }
 
         .signature {
             text-align: right;
@@ -114,8 +148,65 @@
             font-size: 2rem;
             letter-spacing: 15px;
         }
+
+        /* --- AJUSTES PARA CELULAR --- */
+        @media (max-width: 600px) {
+
+            .welcome-card {
+                padding: 40px 25px;
+                width: 75%;
+            }
+
+            .welcome-card h1 {
+                font-size: 1.8rem;
+            }
+
+            .btn-enter {
+                padding: 16px 30px;
+                font-size: 0.9rem;
+                letter-spacing: 2px;
+            }
+
+            .container {
+                padding: 60px 10px;
+            }
+
+            .photo-mural {
+                width: 95%;
+                grid-template-columns: 1fr;
+                gap: 25px;
+                margin-bottom: 80px;
+            }
+
+            .photo-card img {
+                height: 350px;
+            }
+
+            .letter-section {
+                width: 85%;
+                padding: 45px 25px;
+                font-size: 1rem;
+                line-height: 1.9;
+                border-radius: 25px;
+                margin-bottom: 100px;
+            }
+
+            .letter-section h2 {
+                font-size: 2.2rem;
+            }
+
+            .letter-content p {
+                margin-bottom: 25px;
+                text-indent: 15px;
+            }
+
+            .signature {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
+
 <body>
 
     <canvas id="bg"></canvas>
@@ -130,23 +221,51 @@
 
     <div id="scene2">
         <div class="container">
-            <h1 style="color: white; letter-spacing: 10px; margin-bottom: 80px;">MEMÓRIAS</h1>
+
+            <h1 style="color: white; letter-spacing: 10px; margin-bottom: 80px;">
+                MEMÓRIAS
+            </h1>
             
             <div class="photo-mural">
-                <div class="photo-card" style="transform: rotate(-2deg);"><img src="file_00000000570c71f598ff15ca12a09a69.png"></div>
-                <div class="photo-card" style="transform: rotate(3deg);"><img src="motion_photo_2689061293025270798.jpg"></div>
-                <div class="photo-card" style="transform: rotate(-4deg);"><img src="IMG-20260524-WA0140.jpg"></div>
-                <div class="photo-card" style="transform: rotate(1deg);"><img src="IMG-20260716-WA0026.jpg"></div>
-                <div class="photo-card" style="transform: rotate(-3deg);"><img src="IMG-20260426-WA0038.jpg"></div>
-                <div class="photo-card" style="transform: rotate(2deg);"><img src="
-Screenshot_20260330_010937_WhatsApp~2.jpg"></div>
-                <div class="photo-card" style="transform: rotate(4deg);"><img src="foto7.jpg"></div>
-                <div class="photo-card" style="transform: rotate(-1deg);"><img src="foto8.jpg"></div>
+
+                <div class="photo-card" style="transform: rotate(-2deg);">
+                    <img src="file_00000000570c71f598ff15ca12a09a69.png">
+                </div>
+
+                <div class="photo-card" style="transform: rotate(3deg);">
+                    <img src="motion_photo_2689061293025270798.jpg">
+                </div>
+
+                <div class="photo-card" style="transform: rotate(-4deg);">
+                    <img src="IMG-20260524-WA0140.jpg">
+                </div>
+
+                <div class="photo-card" style="transform: rotate(1deg);">
+                    <img src="IMG-20260716-WA0026.jpg">
+                </div>
+
+                <div class="photo-card" style="transform: rotate(-3deg);">
+                    <img src="IMG-20260426-WA0038.jpg">
+                </div>
+
+                <div class="photo-card" style="transform: rotate(2deg);">
+                    <img src="Screenshot_20260330_010937_WhatsApp~2.jpg">
+                </div>
+
+                <div class="photo-card" style="transform: rotate(4deg);">
+                    <img src="foto7.jpg">
+                </div>
+
+                <div class="photo-card" style="transform: rotate(-1deg);">
+                    <img src="foto8.jpg">
+                </div>
+
             </div>
 
             <div class="divider">--- ♥ ---</div>
 
             <div class="letter-section">
+
                 <h2>Minha Lella,</h2>
 
                 <div class="letter-content">
@@ -224,9 +343,11 @@ Screenshot_20260330_010937_WhatsApp~2.jpg"></div>
                     Com todo amor e carinho do mundo <br>
                     Henrique
                 </div>
+
             </div>
             
             <div style="height: 100px;"></div>
+
         </div>
     </div>
 
