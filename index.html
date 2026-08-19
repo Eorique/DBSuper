@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DBSuper - Robótica Preditiva & Assistentes Empresariais</title>
+    <title>DBSuper - Robôs Estilo TJBot & Inteligência Preditiva</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
@@ -115,7 +115,7 @@
 
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-            height: 75vh;
+            height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -140,8 +140,8 @@
 
         .hero p {
             font-family: var(--font-corpo);
-            font-size: 1.25rem;
-            max-width: 750px;
+            font-size: 1.2rem;
+            max-width: 800px;
             margin-bottom: 2rem;
             font-weight: 300;
         }
@@ -201,8 +201,8 @@
 
         .solucoes-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
 
         .solucao-card {
@@ -233,18 +233,18 @@
             font-family: var(--font-titulo);
             color: var(--cor-texto-claro);
             margin-bottom: 15px;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
         }
 
         .solucao-card p {
             color: var(--cor-texto-secundario);
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         .solucao-card .extra-info {
             display: none;
             margin-top: 15px;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: var(--cor-texto-secundario);
             font-style: italic;
             border-top: 1px solid rgba(255,255,255,0.1);
@@ -264,7 +264,7 @@
             font-family: var(--font-corpo);
             text-align: center;
             max-width: 900px;
-            margin: auto;
+            margin: 0 auto 20px auto;
             font-size: 1.1rem;
             line-height: 1.8;
             color: var(--cor-texto-secundario);
@@ -272,6 +272,26 @@
 
         #sobre .section-title {
             color: var(--cor-texto-claro);
+        }
+
+        .areas-badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .badge {
+            background: rgba(123, 0, 247, 0.15);
+            border: 1px solid var(--cor-destaque-roxo);
+            color: var(--cor-texto-claro);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
         #contato {
@@ -396,55 +416,75 @@
 
     <main>
         <section class="hero">
-            <h2>Preveja Falhas. Solucione Instantaneamente. <span>Automatize Tudo.</span></h2>
-            <p>Criamos robôs autônomos integrados a redes de sensores IoT. Eles monitoram suas operações, preveem erros antes que aconteçam, executam correções imediatas e atuam como assistentes executivos para a sua equipe.</p>
-            <a href="#contato" class="cta-button"><i class="fas fa-robot"></i> Conheça Nossos Robôs</a>
+            <h2>Robôs Inteligentes Estilo TJBot. <span>Previsão, Ação e Assistência Empresarial.</span></h2>
+            <p>Desenvolvemos robôs interativos baseados no conceito TJBot, integrados a sensores IoT. Eles antecipam falhas, corrigem anomalias automaticamente e atuam como assistentes executivos customizáveis para a saúde, indústria e corporações.</p>
+            <a href="#contato" class="cta-button"><i class="fas fa-robot"></i> Configure seu Robô TJBot</a>
         </section>
 
         <section id="solucoes">
             <div class="container">
-                <h2 class="section-title">Nossa Tecnologia</h2>
+                <h2 class="section-title">Nossa Tecnologia TJBot</h2>
                 <div class="solucoes-grid">
+                    
+                    <div class="solucao-card">
+                        <div class="icon-container">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h3>Hardware TJBot Customizável</h3>
+                        <p>Robôs compactos montados sob medida em estrutura 3D ou material leve, equipados com câmera, microfone, LED interativo e braços mecânicos.</p>
+                        <p class="extra-info">Totalmente personalizável na carcaça, sensores acoplados e comportamento conforme as necessidades do seu ambiente.</p>
+                    </div>
+
+                    <div class="solucao-card">
+                        <div class="icon-container">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <h3>Aplicação na Área Médica</h3>
+                        <p>Monitoramento contínuo de equipamentos hospitalares, controle de temperatura de vacinas e assistência diária para equipes de saúde.</p>
+                        <p class="extra-info">Previne paradas em bisturis elétricos e ressonâncias, gerencia estoque de insumos e responde a dúvidas de protocolos médicos em tempo real.</p>
+                    </div>
+
                     <div class="solucao-card">
                         <div class="icon-container">
                             <i class="fas fa-wave-square"></i>
                         </div>
-                        <h3>Sensor IoT & Previsão de Falhas</h3>
-                        <p>Conectamos nossos robôs a sensores de temperatura, pressão, vibração e ruído para prever anomalias antes que virem problemas.</p>
-                        <p class="extra-info">Análise preditiva em milissegundos com envio de alertas preventivos e diagnóstico automatizado.</p>
+                        <h3>Sensores IoT & Diagnóstico Preditivo</h3>
+                        <p>Conexão com rede de sensores externos para detectar alteração de temperatura, ruído ou vibração antes que ocorra uma pane.</p>
+                        <p class="extra-info">Processamento preditivo que aciona ações corretivas instantâneas ou alertas prioritários para os operadores.</p>
                     </div>
 
                     <div class="solucao-card">
                         <div class="icon-container">
-                            <i class="fas fa-tools"></i>
+                            <i class="fas fa-comments"></i>
                         </div>
-                        <h3>Resolução Autônoma de Erros</h3>
-                        <p>Ao detectar qualquer divergência operacional, o robô intervém imediatamente para corrigir o parâmetro ou reencaminhar o processo.</p>
-                        <p class="extra-info">Ações de mitigação sem necessidade de parada na produção ou intervenção humana direta.</p>
+                        <h3>Assistente Pessoal do Funcionário</h3>
+                        <p>Funciona como um assistente corporativo inteligente: o funcionário pode pedir relatórios, dados operacionais e alertas via voz ou texto.</p>
+                        <p class="extra-info">Integração completa com a base de dados do seu negócio, entregando respostas precisas e relatórios sob demanda.</p>
                     </div>
 
-                    <div class="solucao-card">
-                        <div class="icon-container">
-                            <i class="fas fa-user-astronaut"></i>
-                        </div>
-                        <h3>Assistente Corporativo Interativo</h3>
-                        <p>O robô responde a comandos e dúvidas dos funcionários em tempo real, entregando relatórios, métricas e status da operação.</p>
-                        <p class="extra-info">Comunicação via voz ou texto integrada com a base de dados interna da sua empresa.</p>
-                    </div>
                 </div>
             </div>
         </section>
 
         <section id="sobre">
             <div class="container">
-                <h2 class="section-title">Atuação Multisetorial</h2>
-                <p>A DBSuper projeta soluções robóticas adaptáveis a qualquer segmento. Seja na **indústria** prevenindo parada de máquinas, na **logística** otimizando frotas e estoques, no **agronegócio** monitorando culturas, ou na **saúde** e **serviços** atuando como assistente operacional, nossos sistemas conectam hardware e inteligência artificial para garantir zero tempo de inatividade e máxima eficiência.</p>
+                <h2 class="section-title">Adaptável a Qualquer Setor</h2>
+                <p>Na DBSuper, pegamos a versatilidade do ecossistema **TJBot** e a transformamos em uma solução empresarial de alto desempenho. Nossos robôs são adaptados tanto em **hardware** (sensores específicos, câmeras térmicas, suportes) quanto em **software** (IA treinada no seu banco de dados e regras de negócio).</p>
+                <p>O robô atua como um guardião preditivo e um assistente amigável no mesmo dispositivo.</p>
+                
+                <div class="areas-badges">
+                    <span class="badge"><i class="fas fa-hospital"></i> Medicina & Hospitais</span>
+                    <span class="badge"><i class="fas fa-industry"></i> Indústria & Manufatura</span>
+                    <span class="badge"><i class="fas fa-flask"></i> Laboratórios</span>
+                    <span class="badge"><i class="fas fa-boxes"></i> Logística & Estoque</span>
+                    <span class="badge"><i class="fas fa-building"></i> Escritórios Corporativos</span>
+                </div>
             </div>
         </section>
 
         <section id="contato">
             <div class="container">
-                <h2 class="section-title">Traga a DBSuper para sua Empresa</h2>
+                <h2 class="section-title">Monte o Robô Ideal para seu Negócio</h2>
                 <div class="contact-options">
                     <a href="mailto:DBSuper7zz@gmail.com" class="contact-link"><i class="fas fa-envelope"></i> E-mail</a>
                     <a href="https://wa.me/5511978356569" target="_blank" class="contact-link"><i class="fab fa-whatsapp"></i> WhatsApp</a>
@@ -456,7 +496,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 DBSuper Robótica & Inteligência Preditiva. Todos os direitos reservados.</p>
+            <p>&copy; 2026 DBSuper - Robôs Inteligentes & Assistentes Preditivos. Todos os direitos reservados.</p>
         </div>
     </footer>
 
