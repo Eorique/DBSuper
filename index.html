@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DBSuper — Cybernetics & PREDiCTiVE iA</title>
+    <title>DBSuper — Projeto Kaizen | TJBot Indústria 5.0</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
@@ -68,7 +68,7 @@
 
         .logo {
             font-family: var(--font-tech);
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 900;
             color: var(--text-white);
             text-transform: uppercase;
@@ -83,7 +83,7 @@
 
         nav ul {
             display: flex;
-            gap: 36px;
+            gap: 32px;
             list-style: none;
         }
 
@@ -96,7 +96,6 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             transition: all 0.3s ease;
-            position: relative;
         }
 
         nav a:hover {
@@ -113,9 +112,9 @@
             cursor: pointer;
         }
 
-        /* Hero Futurista */
+        /* Hero Futurista com Foco no Projeto Kaizen */
         .hero {
-            padding: 220px 0 120px;
+            padding: 200px 0 100px;
             position: relative;
         }
 
@@ -128,7 +127,7 @@
             height: 450px;
             background: var(--purple-neon);
             filter: blur(200px);
-            opacity: 0.25;
+            opacity: 0.22;
             pointer-events: none;
         }
 
@@ -152,13 +151,13 @@
 
         .hero h1 {
             font-family: var(--font-tech);
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             font-weight: 900;
             color: var(--text-white);
             text-transform: uppercase;
             line-height: 1.1;
             letter-spacing: 1px;
-            max-width: 900px;
+            max-width: 950px;
             margin-bottom: 24px;
         }
 
@@ -170,9 +169,10 @@
         .hero p {
             font-size: 1.15rem;
             color: var(--text-gray);
-            max-width: 700px;
+            max-width: 800px;
             margin-bottom: 40px;
             font-weight: 400;
+            line-height: 1.8;
         }
 
         .cta-button {
@@ -199,7 +199,7 @@
             background: linear-gradient(135deg, var(--purple-bright), var(--purple-neon));
         }
 
-        /* Seções */
+        /* Seções Genericas */
         section {
             padding: 100px 0;
             border-top: 1px solid var(--border-purple);
@@ -213,7 +213,7 @@
             color: var(--text-white);
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
         }
 
         .section-title span {
@@ -221,102 +221,19 @@
             text-shadow: 0 0 15px var(--purple-glow);
         }
 
-        /* Cards Futuristas */
-        .solucoes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 24px;
-        }
-
-        .solucao-card {
-            background: rgba(13, 8, 26, 0.6);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--border-purple);
-            padding: 36px 28px;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .solucao-card::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, var(--purple-glow) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-
-        .solucao-card:hover {
-            background: var(--bg-surface-hover);
-            border-color: var(--purple-neon);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
-        }
-
-        .solucao-card:hover::after {
-            opacity: 0.3;
-        }
-
-        .solucao-card .icon-container {
-            font-size: 2rem;
-            color: var(--purple-neon);
-            margin-bottom: 24px;
-            text-shadow: 0 0 15px var(--purple-glow);
-        }
-
-        .solucao-card h3 {
-            font-family: var(--font-sub);
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--text-white);
-            text-transform: uppercase;
-            margin-bottom: 12px;
-            letter-spacing: 1px;
-        }
-
-        .solucao-card p {
-            font-size: 0.95rem;
-            color: var(--text-gray);
-            line-height: 1.6;
-        }
-
-        .solucao-card .extra-info {
-            display: none;
-            margin-top: 16px;
-            padding-top: 16px;
-            border-top: 1px solid var(--border-purple);
-            font-size: 0.88rem;
-            color: var(--purple-bright);
-        }
-
-        .solucao-card.active .extra-info {
-            display: block;
-        }
-
-        /* Setores / Badges Interativas */
-        #sobre p.description {
-            font-size: 1.1rem;
-            max-width: 850px;
-            margin-bottom: 30px;
-        }
-
+        /* Setores / Abas Interativas */
         .areas-badges {
             display: flex;
             flex-wrap: wrap;
             gap: 14px;
-            margin-top: 40px;
+            margin-top: 30px;
+            margin-bottom: 35px;
         }
 
         .sector-btn {
             background: rgba(13, 8, 26, 0.7);
             border: 1px solid var(--border-purple);
-            padding: 16px 28px;
+            padding: 16px 24px;
             font-family: var(--font-sub);
             font-size: 1rem;
             font-weight: 700;
@@ -333,7 +250,6 @@
 
         .sector-btn i {
             color: var(--purple-neon);
-            transition: color 0.3s ease;
         }
 
         .sector-btn:hover {
@@ -353,9 +269,11 @@
             color: var(--text-white);
         }
 
-        /* Painel Tecnológico do Setor */
-        .sector-detail-box {
-            margin-top: 35px;
+        /* Grid de Detalhamento + Modelo 3D / Blueprint do TJBot */
+        .sector-display-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 30px;
             background: rgba(13, 8, 26, 0.85);
             backdrop-filter: blur(16px);
             border: 1px solid var(--purple-neon);
@@ -365,8 +283,8 @@
             animation: fadeIn 0.4s ease-out;
         }
 
-        .sector-detail-box::before {
-            content: 'SYSTEM_ANALYSIS // ACTIVE';
+        .sector-display-grid::before {
+            content: 'TJBOT_MODULE_CONFIG // KAIZEN_OS';
             position: absolute;
             top: -12px;
             right: 20px;
@@ -384,7 +302,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .sector-detail-box h3 {
+        .sector-info h3 {
             font-family: var(--font-tech);
             font-size: 1.6rem;
             font-weight: 900;
@@ -394,15 +312,13 @@
             display: flex;
             align-items: center;
             gap: 14px;
-            letter-spacing: 1px;
         }
 
-        .sector-detail-box h3 i {
+        .sector-info h3 i {
             color: var(--purple-neon);
-            text-shadow: 0 0 10px var(--purple-glow);
         }
 
-        .sector-detail-box p {
+        .sector-info p {
             font-size: 1.05rem;
             color: var(--text-gray);
             margin-bottom: 24px;
@@ -412,14 +328,13 @@
         .sector-features {
             list-style: none;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 16px;
+            gap: 14px;
         }
 
         .sector-features li {
             background: rgba(168, 85, 247, 0.05);
             border: 1px solid var(--border-purple);
-            padding: 16px;
+            padding: 14px;
             font-size: 0.95rem;
             color: var(--text-white);
             display: flex;
@@ -430,6 +345,175 @@
         .sector-features li i {
             color: var(--purple-bright);
             margin-top: 3px;
+        }
+
+        /* Visualizador do Modelo TJBot */
+        .robot-visualizer {
+            background: rgba(5, 3, 10, 0.9);
+            border: 1px solid var(--border-purple);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .robot-visualizer::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, var(--purple-glow) 0%, transparent 70%);
+            opacity: 0.2;
+            pointer-events: none;
+        }
+
+        .robot-card-graphic {
+            width: 100%;
+            max-width: 260px;
+            height: 280px;
+            border: 2px dashed var(--purple-neon);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: inset 0 0 20px var(--purple-glow);
+            margin-bottom: 20px;
+        }
+
+        .robot-avatar {
+            font-size: 5.5rem;
+            color: var(--purple-bright);
+            filter: drop-shadow(0 0 15px var(--purple-neon));
+            animation: floatRobot 3s ease-in-out infinite;
+        }
+
+        @keyframes floatRobot {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .module-badge {
+            position: absolute;
+            bottom: 15px;
+            background: var(--purple-neon);
+            color: var(--bg-black);
+            font-family: var(--font-tech);
+            font-size: 0.7rem;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .robot-specs-list {
+            width: 100%;
+            font-family: var(--font-sub);
+            font-size: 0.9rem;
+            color: var(--text-white);
+            border-top: 1px dashed var(--border-purple);
+            padding-top: 15px;
+        }
+
+        .robot-specs-list div {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .robot-specs-list span.val {
+            color: var(--purple-bright);
+            font-weight: 700;
+        }
+
+        /* Seção para Setor Personalizado / Não Listado */
+        .custom-request-box {
+            background: rgba(13, 8, 26, 0.7);
+            border: 1px dashed var(--purple-neon);
+            padding: 45px;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .custom-request-box h3 {
+            font-family: var(--font-tech);
+            font-size: 1.6rem;
+            color: var(--text-white);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .custom-request-box h3 i {
+            color: var(--purple-neon);
+        }
+
+        .custom-request-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .custom-request-form .full-width {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: var(--font-sub);
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            background: rgba(5, 3, 10, 0.8);
+            border: 1px solid var(--border-purple);
+            padding: 14px 18px;
+            color: var(--text-white);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--purple-neon);
+            box-shadow: 0 0 15px var(--purple-glow);
+        }
+
+        .submit-btn {
+            background: var(--purple-neon);
+            color: var(--text-white);
+            border: none;
+            padding: 16px 30px;
+            font-family: var(--font-sub);
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px var(--purple-glow);
+        }
+
+        .submit-btn:hover {
+            background: var(--purple-bright);
+            transform: translateY(-2px);
         }
 
         /* Contato */
@@ -462,18 +546,12 @@
         .contact-link i {
             color: var(--purple-neon);
             font-size: 1.3rem;
-            transition: transform 0.3s ease;
         }
 
         .contact-link:hover {
             background: var(--purple-neon);
             border-color: var(--purple-bright);
             box-shadow: 0 0 30px var(--purple-glow);
-        }
-
-        .contact-link:hover i {
-            color: var(--text-white);
-            transform: scale(1.1);
         }
 
         /* Footer */
@@ -490,9 +568,23 @@
         }
 
         /* Responsive */
+        @media (max-width: 900px) {
+            .sector-display-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .custom-request-form {
+                grid-template-columns: 1fr;
+            }
+
+            .custom-request-form .full-width {
+                grid-column: span 1;
+            }
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.3rem;
+                font-size: 2.2rem;
             }
 
             .menu-toggle {
@@ -520,11 +612,7 @@
                 gap: 20px;
             }
 
-            .contact-options {
-                grid-template-columns: 1fr;
-            }
-
-            .sector-detail-box {
+            .custom-request-box {
                 padding: 25px;
             }
         }
@@ -534,12 +622,13 @@
 
     <header>
         <div class="container">
-            <a href="#" class="logo">DB<span>SUPER</span></a>
+            <a href="#" class="logo">DB<span>SUPER</span> // KAIZEN</a>
             <button class="menu-toggle" aria-label="Toggle menu">☰</button>
             <nav>
                 <ul>
-                    <li><a href="#solucoes">Soluções</a></li>
-                    <li><a href="#sobre">Setores</a></li>
+                    <li><a href="#projeto">O Projeto</a></li>
+                    <li><a href="#modelos">Modelos TJBot</a></li>
+                    <li><a href="#personalizado">Solicitar Setor</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
@@ -547,59 +636,25 @@
     </header>
 
     <main>
-        <section class="hero">
+        <!-- Hero Section focada na Filosofia Kaizen & Indústria 5.0 -->
+        <section class="hero" id="projeto">
             <div class="container">
                 <div class="slogan-tag">
-                    <i class="fas fa-bolt"></i> EVOLUÇÃO CONTÍNUA // SOLUÇÕES PREDITIVAS
+                    <i class="fas fa-microchip"></i> PROJETO KAIZEN // COLABORAÇÃO HOMEM-MÁQUINA
                 </div>
-                <h1>ROBÓTICA TJBOT & <span>INTELIGÊNCIA PREDITIVA</span></h1>
-                <p>Desenvolvemos arquitetura robótica modular de alta performance integrada a ecossistemas IoT. Automação autônoma, manutenção preditiva em tempo real e suporte cibernético para ambientes críticos.</p>
-                <a href="#contato" class="cta-button"><i class="fas fa-microchip"></i> INICIAR PROJETO</a>
+                <h1>ROBÔ AUXILIAR INTELIGENTE PARA A <span>INDÚSTRIA 5.0</span></h1>
+                <p>O <strong>Projeto Kaizen</strong> foi idealizado para facilitar a rotina do trabalhador. Na era da Indústria 5.0, nosso robô atua como um assistente lado a lado, fornecendo respostas instantâneas, inspecionando materiais com câmeras/sensores e detectando sobrecargas em máquinas para prevenir falhas.</p>
+                <a href="#modelos" class="cta-button"><i class="fas fa-robot"></i> EXPLORAR MODELOS TJBOT</a>
             </div>
         </section>
 
-        <section id="solucoes">
+        <!-- Seção Principal: Modelos do TJBot por Setor -->
+        <section id="modelos">
             <div class="container">
-                <h2 class="section-title">TECNOLOGIA <span>& ECOSSISTEMA</span></h2>
+                <h2 class="section-title">CONFIGURAÇÕES DO <span>TJBOT POR ÁREA</span></h2>
+                <p>Clique em uma área para visualizar a atuação prática do robô e o modelo de hardware configurado para a função:</p>
                 
-                <div class="solucoes-grid">
-                    <div class="solucao-card">
-                        <div class="icon-container"><i class="fas fa-robot"></i></div>
-                        <h3>Hardware Modular TJBot</h3>
-                        <p>Arquitetura adaptável equipada com visão computacional, sensores avançados e atuadores robóticos para demandas complexas.</p>
-                        <p class="extra-info">Customização física total, barramentos de comunicação industrial e robótica responsiva.</p>
-                    </div>
-
-                    <div class="solucao-card">
-                        <div class="icon-container"><i class="fas fa-notes-medical"></i></div>
-                        <h3>Aplicação Médica de Precisão</h3>
-                        <p>Monitoramento contínuo de sistemas vitais e suporte de alta disponibilidade para UTIs e laboratórios analíticos.</p>
-                        <p class="extra-info">Controle térmico em tempo real para imunobiológicos e diagnósticos de suporte cirúrgico.</p>
-                    </div>
-
-                    <div class="solucao-card">
-                        <div class="icon-container"><i class="fas fa-network-wired"></i></div>
-                        <h3>Telemetria IoT Preditiva</h3>
-                        <p>Processamento Edge em tempo real monitorando padrões térmicos e vibracionais para erradicação de falhas não planejadas.</p>
-                        <p class="extra-info">Algoritmos neurais dedicados a reduzir downtime operacional e otimizar ativos.</p>
-                    </div>
-
-                    <div class="solucao-card">
-                        <div class="icon-container"><i class="fas fa-brain"></i></div>
-                        <h3>Assistente Pessoal Cognitivo</h3>
-                        <p>Interface neural de linguagem natural conectada diretamente à base de conhecimento e métricas da sua corporação.</p>
-                        <p class="extra-info">Respostas estruturadas instantâneas e geração automatizada de relatórios gerenciais.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="sobre">
-            <div class="container">
-                <h2 class="section-title">ADAPTAÇÃO A <span>SETORES CRÍTICOS</span></h2>
-                <p class="description">Selecione um segmento abaixo para visualizar os protocolos de atuação do ecossistema DBSuper:</p>
-                
-                <!-- Abas Interativas -->
+                <!-- Abas dos Setores -->
                 <div class="areas-badges">
                     <button class="sector-btn active" data-sector="medicina">
                         <i class="fas fa-heart-pulse"></i> Medicina & Saúde
@@ -618,16 +673,41 @@
                     </button>
                 </div>
 
-                <!-- Painel Futurista de Detalhes -->
-                <div class="sector-detail-box" id="sector-display">
-                    <!-- O conteúdo é injetado via JS -->
+                <!-- Painel Dinâmico: Texto Explicativo + Visualizador do TJBot -->
+                <div class="sector-display-grid" id="sector-display">
+                    <!-- Conteúdo dinâmico inserido via JS -->
+                </div>
+
+                <!-- Formulário para Solicitação de Setor Personalizado / Não Listado -->
+                <div class="custom-request-box" id="personalizado">
+                    <h3><i class="fas fa-sliders"></i> SUA ÁREA NÃO FOI LISTADA?</h3>
+                    <p>Projetamos o TJBot de forma 100% modular. Diga-nos qual é o seu setor ou necessidade e desenvolveremos uma configuração personalizada para o Projeto Kaizen na sua empresa.</p>
+                    
+                    <form class="custom-request-form" onsubmit="handleCustomSubmit(event)">
+                        <div class="form-group">
+                            <label>Seu Nome / Empresa</label>
+                            <input type="text" placeholder="Ex: Dra. Juliana / Indústria Alfa" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Área de Atuação / Setor</label>
+                            <input type="text" placeholder="Ex: Odontologia, Metalúrgica, Agronegócio..." required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Como o TJBot pode ajudar o seu trabalhador?</label>
+                            <textarea rows="4" placeholder="Descreva quais dados ele deve consultar, materiais a inspecionar ou tipos de equipamentos a monitorar..." required></textarea>
+                        </div>
+                        <div class="form-group full-width">
+                            <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> SOLICITAR PROJETO SOB MEDIDA</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>
 
+        <!-- Seção Contato -->
         <section id="contato">
             <div class="container">
-                <h2 class="section-title">INICIE O <span>DESENVOLVIMENTO</span></h2>
+                <h2 class="section-title">FALE COM OS <span>DESENVOLVEDORES</span></h2>
                 <div class="contact-options">
                     <a href="mailto:DBSuper7zz@gmail.com" class="contact-link"><i class="fas fa-envelope"></i> E-mail Direct</a>
                     <a href="https://wa.me/5511978356569" target="_blank" class="contact-link"><i class="fab fa-whatsapp"></i> WhatsApp</a>
@@ -639,85 +719,134 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 DBSuper — Next-Gen Robotics & Predictive Systems</p>
+            <p>&copy; 2026 DBSuper — Projeto Kaizen & Indústria 5.0</p>
         </div>
     </footer>
 
     <script>
-        // Dados explicativos dos setores
+        // Banco de Dados dos Modelos do TJBot por Área
         const sectorData = {
             medicina: {
-                title: "Medicina & Saúde",
+                title: "Área Médica & Hospitalar",
                 icon: "fas fa-heart-pulse",
-                description: "No ecossistema de saúde, o TJBot opera como um nó ciber-físico em tempo real, dedicado à proteção de equipamentos de alto custo e à assistência interativa das equipes hospitalares.",
+                description: "Em vez de um médico precisar caminhar até a sala de arquivos para buscar a ficha de um paciente e conferir qual medicamento deve ser administrado, o TJBot armazena essa informação. Bastando uma pergunta por voz do médico, o robô responde instantaneamente na hora e local da consulta.",
                 features: [
-                    "Monitoramento em tempo real de câmaras térmicas de vacinas e biológicos.",
-                    "Telemetria preditiva aplicada a tomógrafos e ressonâncias magnéticas.",
-                    "Assistente por comando de voz para rápido acesso a prontuários e diretrizes.",
-                    "Triagem automatizada e orientação interativa na recepção de pacientes."
-                ]
+                    "Acesso instantâneo a prontuários e posologia de medicamentos sem deslocamento.",
+                    "Câmera para validação visual do estado de ampolas e instrumentos.",
+                    "Análise preditiva de temperatura de armazenamento de insumos e vacinas.",
+                    "Assistência em tempo real para equipes em prontos-socorros e UTIs."
+                ],
+                modelSpec: {
+                    badge: "TJBot Med-Assistant",
+                    iconClass: "fas fa-user-doctor",
+                    hardware: "Display Tátil + Assistente de Voz",
+                    sensors: "Câmera HD / Termômetro IR",
+                    purpose: "Consulta Prontuário & Dosagem"
+                }
             },
             industria: {
-                title: "Indústria 5.0",
+                title: "Indústria 5.0 & Manufatura",
                 icon: "fas fa-industry",
-                description: "Alinhado aos princípios da Indústria 5.0, o TJBot atua como um cobot (robô colaborativo) focado em unificar a intuição humana à precisão computacional autônoma.",
+                description: "O TJBot atua diretamente ao lado do operário na fábrica. Utilizando sensores adaptativos, ele monitora se os maquinários estão em sobrecarga ou superaquecidos, emitindo alertas térmicos exatos e recomendações imediatas do que fazer para solucionar o problema antes de uma pane.",
                 features: [
-                    "Interação homem-máquina segura em células de manufatura complexas.",
-                    "Análise acústica e vibracional via sensores IoT para antecipar panes.",
-                    "Reconfiguração preditiva autônoma de parâmetros operacionais.",
-                    "Telemetria térmica avançada em motores e painéis de alta tensão."
-                ]
+                    "Detecção de sobrecarga e superaquecimento em maquinários.",
+                    "Inspecção por câmera para avaliar se peças/materiais estão em perfeito estado.",
+                    "Recomendações técnicas instantâneas enviadas ao operador.",
+                    "Redução do tempo de inatividade da linha de produção."
+                ],
+                modelSpec: {
+                    badge: "TJBot Cobot 5.0",
+                    iconClass: "fas fa-robot",
+                    hardware: "Gabinete Anti-Impacto",
+                    sensors: "Sensor Vibracional + Térmico",
+                    purpose: "Inspeção de Peças & Máquinas"
+                }
             },
             laboratorios: {
-                title: "Laboratórios Analíticos",
+                title: "Laboratórios & Análises",
                 icon: "fas fa-flask",
-                description: "Automação e rastreabilidade rigorosa de condições bioambientais em amostragem e síntese farmacêutica.",
+                description: "Permite ao pesquisador confirmar se tubos, reagentes e vidrarias estão aptos para uso ou se necessitam de troca, através da câmera de análise óptica e sensores ambientais do robô.",
                 features: [
-                    "Controle biométrico de temperatura, umidade e particulados no ar.",
-                    "Rastreamento automatizado de amostras por visão computacional.",
-                    "Emissão de alertas em tempo real sobre desvios de protocolo ou contaminação.",
-                    "Registro imutável de ensaios e sincronização direta com a nuvem."
-                ]
+                    "Avaliação rápida da integridade de reagentes e recipientes por visão computacional.",
+                    "Medição constante de temperatura e umidade da bancada de testes.",
+                    "Histórico de dados laboratoriais transmitido via nuvem em tempo real.",
+                    "Auxiliar na conferência de dados de protocolos de teste."
+                ],
+                modelSpec: {
+                    badge: "TJBot Lab-Guard",
+                    iconClass: "fas fa-vial-circle-check",
+                    hardware: "Chassi Hermético",
+                    sensors: "Leitor Óptico / Gás / Temp",
+                    purpose: "Validação de Insumos & Clima"
+                }
             },
             logistica: {
-                title: "Logística Autônoma",
+                title: "Logística & Almoxarifado",
                 icon: "fas fa-cubes",
-                description: "Otimização de rotas internas e supervisão de cadeias de suprimentos com alta complexidade operacional.",
+                description: "Trabalha lado a lado com o conferente de estoque. O trabalhador pode apresentar uma embalagem ou caixa ao robô para que ele valide se a estrutura do material está em perfeitas condições para despacho.",
                 features: [
-                    "Auditoria em tempo real de inventário por leitura óptica e RFID.",
-                    "Supervisão contínua da cadeia de frio em frotas de transporte.",
-                    "Alertas preditivos de colisão e segurança em galpões industriais.",
-                    "Sincronização imediata com plataformas de gestão ERP e WMS."
-                ]
+                    "Leitura por câmera e detecção de avarias em embalagens.",
+                    "Validação de código de barras e localização de prateleiras por voz.",
+                    "Alerta para sobrecarga de peso em pallets e suportes de carga.",
+                    "Comunicação direta com o sistema de inventário."
+                ],
+                modelSpec: {
+                    badge: "TJBot Cargo-Check",
+                    iconClass: "fas fa-boxes-packing",
+                    hardware: "Braço Articulado Scanner",
+                    sensors: "Câmera 3D / Sensor de Carga",
+                    purpose: "Inspeção de Caixas & Estoque"
+                }
             },
             corporativo: {
-                title: "Corporativo & Smart Offices",
+                title: "Corporativo & Escritórios",
                 icon: "fas fa-building-shield",
-                description: "Transforma sedes corporativas em ambientes inteligentes com interatividade física e análise de dados em tempo real.",
+                description: "Atua ao lado de executivos e colaboradores na organização de tarefas diárias, auditorias de equipamentos eletrônicos do escritório e pronta resposta sobre relatórios da empresa.",
                 features: [
-                    "Recepção cibernética e triagem inteligente de visitantes.",
-                    "Acesso instantâneo a KPIs e balanços através de voz ou chat corporativo.",
-                    "Gerenciamento autônomo de salas de reunião e recursos compartilhados.",
-                    "Automação preditiva de consumo energético e climatização da sede."
-                ]
+                    "Respostas em tempo real sobre métricas e documentos corporativos.",
+                    "Inspecção térmica de servidores e painéis elétricos do escritório.",
+                    "Agendamento e auxílio em reuniões estratégicas.",
+                    "Interface interativa de apoio a novos colaboradores."
+                ],
+                modelSpec: {
+                    badge: "TJBot Exec-Assistant",
+                    iconClass: "fas fa-laptop-code",
+                    hardware: "Display Neon Interativo",
+                    sensors: "Matriz de Microfones / IA Vocal",
+                    purpose: "Consultas de Dados & Suporte"
+                }
             }
         };
 
-        // Atualização dinâmica do painel
-        function updateSectorDetail(sectorKey) {
-            const data = sectorData[sectorKey];
+        // Função de Atualização Dinâmica do Visualizador
+        function updateSectorDisplay(key) {
+            const data = sectorData[key];
             const display = document.getElementById('sector-display');
-            
+
             display.innerHTML = `
-                <h3><i class="${data.icon}"></i> ${data.title}</h3>
-                <p>${data.description}</p>
-                <ul class="sector-features">
-                    ${data.features.map(feat => `<li><i class="fas fa-chevron-right"></i> <span>${feat}</span></li>`).join('')}
-                </ul>
+                <div class="sector-info">
+                    <h3><i class="${data.icon}"></i> ${data.title}</h3>
+                    <p>${data.description}</p>
+                    <ul class="sector-features">
+                        ${data.features.map(feat => `<li><i class="fas fa-check-double"></i> <span>${feat}</span></li>`).join('')}
+                    </ul>
+                </div>
+
+                <div class="robot-visualizer">
+                    <div class="robot-card-graphic">
+                        <i class="${data.modelSpec.iconClass} robot-avatar"></i>
+                        <span class="module-badge">${data.modelSpec.badge}</span>
+                    </div>
+                    <div class="robot-specs-list">
+                        <div><span>MODO DE ATUAÇÃO:</span> <span class="val">${data.modelSpec.purpose}</span></div>
+                        <div><span>MÓDULO HARDWARE:</span> <span class="val">${data.modelSpec.hardware}</span></div>
+                        <div><span>SENSORES ATIVOS:</span> <span class="val">${data.modelSpec.sensors}</span></div>
+                    </div>
+                </div>
             `;
         }
 
-        // Listeners para os botões de setor
+        // Event listeners para as abas dos setores
         const sectorButtons = document.querySelectorAll('.sector-btn');
         sectorButtons.forEach(button => {
             button.addEventListener('click', () => {
@@ -725,14 +854,21 @@
                 button.classList.add('active');
                 
                 const sector = button.getAttribute('data-sector');
-                updateSectorDetail(sector);
+                updateSectorDisplay(sector);
             });
         });
 
-        // Inicialização
-        updateSectorDetail('medicina');
+        // Carrega Medicina por padrão
+        updateSectorDisplay('medicina');
 
-        // Menu Mobile Toggle
+        // Form Submit Handler
+        function handleCustomSubmit(e) {
+            e.preventDefault();
+            alert("Solicitação enviada com sucesso! A equipe do Projeto Kaizen entrará em contato para detalhar a configuração do seu TJBot.");
+            e.target.reset();
+        }
+
+        // Toggle do Menu Mobile
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('header nav');
 
@@ -756,13 +892,6 @@
                         menuToggle.textContent = '☰';
                     }
                 }
-            });
-        });
-
-        // Toggle dos cards
-        document.querySelectorAll('.solucao-card').forEach(card => {
-            card.addEventListener('click', () => {
-                card.classList.toggle('active');
             });
         });
     </script>
