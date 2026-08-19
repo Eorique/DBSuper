@@ -29,25 +29,25 @@
 
         
         :root {
-            --cor-primaria-azul: #003366;
-            --cor-secundaria-azul: #005A9C;
-            --cor-destaque-laranja: #ff6600;
+            --cor-primaria-roxo: #5b05cb; /* Roxo */
+            --cor-secundaria-preto: #000000; /* Preto */
+            --cor-destaque-roxo: #5b05cb; /* Roxo */
             --cor-texto-claro: #f4f4f4;
-            --cor-fundo-claro: #f9f9f9;
-            --cor-whatsapp: #25D366;
-            --cor-instagram: #C13584;
+            --cor-fundo-claro: #000000; /* Preto */
+            --cor-whatsapp: #5b05cb; /* Roxo */
+            --cor-instagram: #5b05cb; /* Roxo */
         }
 
         
         header {
-            background: var(--cor-primaria-azul);
+            background: var(--cor-primaria-roxo);
             color: var(--cor-texto-claro);
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 3px solid var(--cor-destaque-laranja);
+            border-bottom: 3px solid var(--cor-destaque-roxo);
         }
 
         header .container {
@@ -61,7 +61,7 @@
         }
 
         header h1 span {
-            color: var(--cor-destaque-laranja);
+            color: var(--cor-destaque-roxo);
         }
 
         header nav ul {
@@ -81,7 +81,7 @@
         }
 
         header nav a:hover {
-            color: var(--cor-destaque-laranja);
+            color: var(--cor-destaque-roxo);
         }
 
         .menu-toggle {
@@ -95,7 +95,8 @@
 
         
         .hero {
-            background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)), url('https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            /* Gradiente ajustado para roxo */
+            background: linear-gradient(rgba(91, 5, 203, 0.7), rgba(91, 5, 203, 0.7)), url('https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
             height: 60vh;
             display: flex;
             flex-direction: column;
@@ -118,7 +119,7 @@
         }
 
         .cta-button {
-            background: var(--cor-destaque-laranja);
+            background: var(--cor-destaque-roxo);
             color: #fff;
             padding: 12px 25px;
             text-decoration: none;
@@ -132,7 +133,7 @@
         }
 
         .cta-button:hover {
-            background: #e65c00;
+            background: #4a04a8; /* Um tom um pouco mais escuro de roxo para o hover */
         }
 
         .cta-button.whatsapp {
@@ -140,7 +141,7 @@
         }
 
         .cta-button.whatsapp:hover {
-            background: #1ebe57;
+            background: #4a04a8;
         }
 
         .cta-button.instagram {
@@ -148,7 +149,7 @@
         }
 
         .cta-button.instagram:hover {
-            background: #a12c6b;
+            background: #4a04a8;
         }
 
         
@@ -157,13 +158,13 @@
         }
 
         section#servicos {
-            background: var(--cor-fundo-claro);
+            background: #f4f4f4; /* Fundo claro para contraste com o texto preto */
         }
 
         .section-title {
             text-align: center;
             font-size: 2.2rem;
-            color: var(--cor-primaria-azul);
+            color: var(--cor-primaria-roxo);
             margin-bottom: 40px;
         }
 
@@ -180,7 +181,7 @@
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             text-align: center;
-            border-left: 5px solid var(--cor-secundaria-azul);
+            border-left: 5px solid var(--cor-secundaria-preto);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
         }
@@ -191,7 +192,7 @@
         }
 
         .servico-card h3 {
-            color: var(--cor-secundaria-azul);
+            color: var(--cor-secundaria-preto);
             margin-bottom: 15px;
         }
 
@@ -207,14 +208,24 @@
         }
 
         
+        #sobre {
+            background-color: var(--cor-fundo-claro); /* Fundo preto */
+            color: var(--cor-texto-claro); /* Texto claro para contraste */
+        }
+
         #sobre p {
             text-align: center;
             max-width: 800px;
             margin: auto;
         }
 
+        #sobre .section-title {
+             color: var(--cor-texto-claro); /* Título claro no fundo escuro */
+        }
+
+
         #contato {
-            background-color: var(--cor-fundo-claro);
+            background-color: #f4f4f4; /* Fundo claro para contraste */
         }
 
         #contato p {
@@ -237,7 +248,7 @@
         }
 
         .contact-form button {
-            background: var(--cor-destaque-laranja);
+            background: var(--cor-destaque-roxo);
             color: #fff;
             padding: 12px 25px;
             border: none;
@@ -248,19 +259,19 @@
         }
 
         .contact-form button:hover {
-            background: #e65c00;
+            background: #4a04a8;
         }
 
         .form-message {
             display: none;
             text-align: center;
             margin-top: 20px;
-            color: var(--cor-secundaria-azul);
+            color: var(--cor-secundaria-preto);
         }
 
         .form-message.success {
             display: block;
-            color: #28a745;
+            color: #05cb05;
         }
 
         .form-message.error {
@@ -285,11 +296,11 @@
 
         
         footer {
-            background: var(--cor-primaria-azul);
+            background: var(--cor-primaria-roxo);
             color: var(--cor-texto-claro);
             text-align: center;
             padding: 20px 0;
-            border-top: 3px solid var(--cor-destaque-laranja);
+            border-top: 3px solid var(--cor-destaque-roxo);
         }
 
         
@@ -388,25 +399,17 @@
         <section id="sobre">
             <div class="container">
                 <h2 class="section-title">Motivações</h2>
-                <p>A DB Super nasceu da necessidade de oferecer tecnologia de banco de dados de ponta para o mercado de pequenas e médias empresas. Acreditamos que o gerenciamento inteligente de dados não deve ser um privilégio de grandes corporações. Nossa missão é fornecer sistemas robustos, seguros e fáceis de usar que impulsionam o sucesso dos nossos clientes.</p>
+                <p>A DBSuper nasceu da necessidade de oferecer tecnologia de banco de dados de ponta para o mercado de pequenas e médias empresas. Acreditamos que o gerenciamento inteligente de dados não deve ser um privilégio de grandes corporações. Nossa missão é fornecer sistemas robustos, seguros e fáceis de usar que impulsionam o sucesso dos nossos clientes.</p>
             </div>
         </section>
 
         <section id="contato">
             <div class="container">
                 <h2 class="section-title">Vamos Conversar?</h2>
-                <p>Envie-nos uma mensagem para agendar uma avaliação gratuita das suas necessidades de dados.</p>
-                <form class="contact-form">
-                    <input type="text" id="nome" placeholder="Seu Nome" required>
-                    <input type="email" id="email" placeholder="Seu E-mail" required>
-                    <textarea id="mensagem" placeholder="Sua Mensagem" rows="5" required></textarea>
-                    <button type="submit">Enviar Mensagem</button>
-                </form>
-                <p class="form-message"></p>
-                <div class="contact-options">
-                    <a href="mailto:DBSuper7zz@gmail.com" class="cta-button contact-link"><i class="fas fa-envelope"></i> Enviar E-mail</a>
-                    <a href="https://wa.me/5511978356569" target="_blank" class="cta-button contact-link whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp: +55 11 97835-6569</a>
-                    <a href="https://instagram.com/dbsuper7z" target="_blank" class="cta-button contact-link instagram"><i class="fab fa-instagram"></i> Instagram: @dbsuper7z_</a>
+                 <a href="mailto:DBSuper7zz@gmail.com" class="cta-button contact-link"><i class="fas fa-envelope"></i>E-mail</a>
+                    <a href="https://wa.me/5511978356569" target="_blank" class="cta-button contact-link whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="https://instagram.com/dbsuper7z" target="_blank" class="cta-button contact-link instagram"><i class="fab fa-instagram"></i> Instagram</a>
                 </div>
             </div>
         </section>
