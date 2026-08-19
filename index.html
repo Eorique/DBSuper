@@ -3,25 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DB Super - Banco de Dados para Pequenas Empresas</title>
+    <title>DBSuper - Robótica Preditiva & Assistentes Empresariais</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* Base Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Variáveis de Cores e Fontes */
         :root {
-            --cor-principal-fundo: #000000; /* Preto total */
-            --cor-secundaria-fundo: #1a1a1a; /* Preto mais suave para seções */
-            --cor-destaque-roxo: #7B00F7; /* Roxo vibrante */
-            --cor-destaque-roxo-hover: #5D00C0; /* Roxo mais escuro para hover */
-            --cor-texto-claro: #f8f8f8; /* Branco/Off-white para texto */
-            --cor-texto-secundario: #cccccc; /* Cinza claro para detalhes */
+            --cor-principal-fundo: #000000;
+            --cor-secundaria-fundo: #1a1a1a;
+            --cor-destaque-roxo: #7B00F7;
+            --cor-destaque-roxo-hover: #5D00C0;
+            --cor-texto-claro: #f8f8f8;
+            --cor-texto-secundario: #cccccc;
             --font-titulo: 'Montserrat', sans-serif;
             --font-corpo: 'Open Sans', sans-serif;
         }
@@ -41,7 +39,6 @@
             padding: 0 20px;
         }
 
-        /* Header */
         header {
             background: var(--cor-principal-fundo);
             color: var(--cor-texto-claro);
@@ -50,7 +47,8 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.5); /* Sombra mais acentuada */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            border-bottom: 1px solid rgba(123, 0, 247, 0.2);
         }
 
         header .container {
@@ -115,49 +113,35 @@
             cursor: pointer;
         }
 
-        /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-            height: 70vh; /* Altura maior */
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 75vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             color: var(--cor-texto-claro);
-            padding-top: 100px; /* Espaço para o header fixo */
+            padding-top: 100px;
             position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.6); /* Overlay mais escuro */
-            z-index: 1;
-        }
-
-        .hero > * { /* Garante que o conteúdo fique acima do overlay */
-            position: relative;
-            z-index: 2;
         }
 
         .hero h2 {
             font-family: var(--font-titulo);
-            font-size: 3.2rem; /* Título maior */
+            font-size: 3rem;
             margin-bottom: 1.5rem;
             line-height: 1.2;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
         }
 
+        .hero h2 span {
+            color: var(--cor-destaque-roxo);
+        }
+
         .hero p {
             font-family: var(--font-corpo);
-            font-size: 1.3rem; /* Texto maior */
-            max-width: 700px;
+            font-size: 1.25rem;
+            max-width: 750px;
             margin-bottom: 2rem;
             font-weight: 300;
         }
@@ -165,41 +149,40 @@
         .cta-button {
             background: var(--cor-destaque-roxo);
             color: var(--cor-texto-claro);
-            padding: 15px 35px; /* Botão maior */
+            padding: 15px 35px;
             text-decoration: none;
-            border-radius: 50px; /* Borda mais arredondada */
+            border-radius: 50px;
             font-weight: bold;
             font-size: 1.2rem;
             transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(123, 0, 247, 0.4);
         }
 
         .cta-button:hover {
             background: var(--cor-destaque-roxo-hover);
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+            box-shadow: 0 8px 25px rgba(123, 0, 247, 0.6);
         }
 
-        /* Seções Gerais */
         section {
-            padding: 80px 0; /* Mais espaçamento */
+            padding: 80px 0;
             background: var(--cor-secundaria-fundo);
-            border-bottom: 1px solid rgba(255,255,255,0.05); /* Separador sutil */
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
-        section#servicos {
-            background: var(--cor-principal-fundo); /* Fundo preto puro */
+        section#solucoes {
+            background: var(--cor-principal-fundo);
         }
 
         .section-title {
             text-align: center;
             font-family: var(--font-titulo);
-            font-size: 2.8rem; /* Título maior */
+            font-size: 2.8rem;
             color: var(--cor-destaque-roxo);
-            margin-bottom: 60px; /* Mais espaçamento */
+            margin-bottom: 60px;
             position: relative;
             padding-bottom: 15px;
         }
@@ -215,76 +198,63 @@
             bottom: 0;
             border-radius: 2px;
         }
-        
-        /* Serviços Grid */
-        .servicos-grid {
+
+        .solucoes-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px; /* Mais espaçamento entre cards */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
         }
 
-        .servico-card {
+        .solucao-card {
             background: var(--cor-secundaria-fundo);
-            padding: 30px;
-            border-radius: 12px; /* Mais arredondado */
-            box-shadow: 0 6px 20px rgba(0,0,0,0.4); /* Sombra mais pronunciada */
+            padding: 35px 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
             text-align: center;
-            border-bottom: 4px solid var(--cor-destaque-roxo); /* Borda roxa embaixo */
+            border-bottom: 4px solid var(--cor-destaque-roxo);
             transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
             cursor: pointer;
             position: relative;
-            overflow: hidden;
         }
 
-        .servico-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, rgba(123,0,247,0.1) 0%, transparent 70%); /* Gradiente sutil */
-            opacity: 0;
-            transition: opacity 0.3s ease;
+        .solucao-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 12px 30px rgba(123, 0, 247, 0.25);
+            background-color: #0d0d0d;
         }
 
-        .servico-card:hover::before {
-            opacity: 1;
-        }
-
-        .servico-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.6);
-            background-color: #0d0d0d; /* Fundo levemente mais escuro no hover */
-        }
-
-        .servico-card h3 {
-            font-family: var(--font-titulo);
+        .solucao-card .icon-container {
+            font-size: 2.5rem;
             color: var(--cor-destaque-roxo);
             margin-bottom: 20px;
-            font-size: 1.6rem;
-        }
-        
-        .servico-card p {
-            color: var(--cor-texto-secundario);
-            font-size: 1rem;
-            margin-bottom: 15px;
         }
 
-        .servico-card .extra-info {
+        .solucao-card h3 {
+            font-family: var(--font-titulo);
+            color: var(--cor-texto-claro);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .solucao-card p {
+            color: var(--cor-texto-secundario);
+            font-size: 1rem;
+        }
+
+        .solucao-card .extra-info {
             display: none;
             margin-top: 15px;
             font-size: 0.9rem;
             color: var(--cor-texto-secundario);
-            opacity: 0.8;
             font-style: italic;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 15px;
         }
 
-        .servico-card.active .extra-info {
+        .solucao-card.active .extra-info {
             display: block;
         }
 
-        /* Sobre Nós */
         #sobre {
             background: var(--cor-principal-fundo);
             color: var(--cor-texto-claro);
@@ -301,18 +271,11 @@
         }
 
         #sobre .section-title {
-            color: var(--cor-texto-claro); /* Título claro no fundo escuro */
-        }
-
-
-        /* Contato */
-        #contato {
-            background-color: var(--cor-secundaria-fundo);
             color: var(--cor-texto-claro);
         }
 
-        #contato .section-title {
-            color: var(--cor-destaque-roxo);
+        #contato {
+            background-color: var(--cor-secundaria-fundo);
         }
 
         .contact-options {
@@ -345,14 +308,9 @@
         .contact-link:hover {
             background: var(--cor-destaque-roxo-hover);
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+            box-shadow: 0 8px 25px rgba(123, 0, 247, 0.5);
         }
 
-        .contact-link i {
-            font-size: 1.3rem;
-        }
-
-        /* Footer */
         footer {
             background: var(--cor-principal-fundo);
             color: var(--cor-texto-secundario);
@@ -362,7 +320,6 @@
             font-size: 0.9rem;
         }
 
-        /* Media Queries */
         @media(max-width: 768px) {
             header .container {
                 flex-direction: column;
@@ -376,7 +333,6 @@
                 text-align: center;
                 background: var(--cor-principal-fundo);
                 padding: 10px 0;
-                box-shadow: 0 4px 10px rgba(0,0,0,0.3);
             }
 
             header nav.active {
@@ -395,40 +351,21 @@
                 top: 20px;
             }
 
-            .hero {
-                height: 80vh;
-                padding-top: 120px;
-            }
-
             .hero h2 {
-                font-size: 2.2rem;
+                font-size: 2.1rem;
             }
 
             .hero p {
                 font-size: 1rem;
             }
 
-            .cta-button {
-                padding: 12px 25px;
-                font-size: 1rem;
-            }
-
-            .section-title {
-                font-size: 2.2rem;
-            }
-
-            .servicos-grid {
+            .solucoes-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .contact-options {
                 flex-direction: column;
                 gap: 15px;
-            }
-
-            .contact-link {
-                padding: 12px 20px;
-                font-size: 1rem;
             }
         }
 
@@ -449,7 +386,7 @@
             <button class="menu-toggle" aria-label="Toggle menu">☰</button>
             <nav>
                 <ul>
-                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#solucoes">Soluções</a></li>
                     <li><a href="#sobre">Sobre Nós</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
@@ -459,29 +396,40 @@
 
     <main>
         <section class="hero">
-            <h2>Otimize seus Dados, Potencialize seu Negócio</h2>
-            <p>Soluções de banco de dados personalizadas para pequenas empresas. Organizamos suas informações para que você foque no crescimento.</p>
-            <a href="#contato" class="cta-button">Solicite uma Consultoria</a>
+            <h2>Preveja Falhas. Solucione Instantaneamente. <span>Automatize Tudo.</span></h2>
+            <p>Criamos robôs autônomos integrados a redes de sensores IoT. Eles monitoram suas operações, preveem erros antes que aconteçam, executam correções imediatas e atuam como assistentes executivos para a sua equipe.</p>
+            <a href="#contato" class="cta-button"><i class="fas fa-robot"></i> Conheça Nossos Robôs</a>
         </section>
 
-        <section id="servicos">
+        <section id="solucoes">
             <div class="container">
-                <h2 class="section-title">Nossos Serviços</h2>
-                <div class="servicos-grid">
-                    <div class="servico-card">
-                        <h3>Modelagem de Banco de Dados</h3>
-                        <p>Criamos a estrutura ideal para seus dados, garantindo eficiência, segurança e escalabilidade para o futuro.</p>
-                        <p class="extra-info">Inclui análise de requisitos, design de esquemas, normalização de dados e testes de integridade para garantir um banco de dados robusto e adaptável.</p>
+                <h2 class="section-title">Nossa Tecnologia</h2>
+                <div class="solucoes-grid">
+                    <div class="solucao-card">
+                        <div class="icon-container">
+                            <i class="fas fa-wave-square"></i>
+                        </div>
+                        <h3>Sensor IoT & Previsão de Falhas</h3>
+                        <p>Conectamos nossos robôs a sensores de temperatura, pressão, vibração e ruído para prever anomalias antes que virem problemas.</p>
+                        <p class="extra-info">Análise preditiva em milissegundos com envio de alertas preventivos e diagnóstico automatizado.</p>
                     </div>
-                    <div class="servico-card">
-                        <h3>Otimização e Performance</h3>
-                        <p>Analisamos e ajustamos seu banco de dados atual para que ele funcione de forma mais rápida e confiável, maximizando a produtividade.</p>
-                        <p class="extra-info">Técnicas avançadas de indexação, reescrita e otimização de consultas, cache inteligente e manutenção preventiva de rotina.</p>
+
+                    <div class="solucao-card">
+                        <div class="icon-container">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Resolução Autônoma de Erros</h3>
+                        <p>Ao detectar qualquer divergência operacional, o robô intervém imediatamente para corrigir o parâmetro ou reencaminhar o processo.</p>
+                        <p class="extra-info">Ações de mitigação sem necessidade de parada na produção ou intervenção humana direta.</p>
                     </div>
-                    <div class="servico-card">
-                        <h3>Business Intelligence (BI)</h3>
-                        <p>Transformamos seus dados brutos em dashboards e relatórios inteligentes que facilitam a tomada de decisões estratégicas e operacionais.</p>
-                        <p class="extra-info">Implementação de ferramentas como Power BI e Tableau, criação de KPIs personalizados e visualizações interativas para insights valiosos.</p>
+
+                    <div class="solucao-card">
+                        <div class="icon-container">
+                            <i class="fas fa-user-astronaut"></i>
+                        </div>
+                        <h3>Assistente Corporativo Interativo</h3>
+                        <p>O robô responde a comandos e dúvidas dos funcionários em tempo real, entregando relatórios, métricas e status da operação.</p>
+                        <p class="extra-info">Comunicação via voz ou texto integrada com a base de dados interna da sua empresa.</p>
                     </div>
                 </div>
             </div>
@@ -489,16 +437,16 @@
 
         <section id="sobre">
             <div class="container">
-                <h2 class="section-title">Motivações</h2>
-                <p>A DBSuper nasceu da necessidade de oferecer tecnologia de banco de dados de ponta para o mercado de pequenas e médias empresas. Acreditamos que o gerenciamento inteligente de dados não deve ser um privilégio de grandes corporações. Nossa missão é fornecer sistemas robustos, seguros e fáceis de usar que impulsionam o sucesso dos nossos clientes, permitindo que se concentrem no que fazem de melhor: crescer seus negócios.</p>
+                <h2 class="section-title">Atuação Multisetorial</h2>
+                <p>A DBSuper projeta soluções robóticas adaptáveis a qualquer segmento. Seja na **indústria** prevenindo parada de máquinas, na **logística** otimizando frotas e estoques, no **agronegócio** monitorando culturas, ou na **saúde** e **serviços** atuando como assistente operacional, nossos sistemas conectam hardware e inteligência artificial para garantir zero tempo de inatividade e máxima eficiência.</p>
             </div>
         </section>
 
         <section id="contato">
             <div class="container">
-                <h2 class="section-title">Vamos Conversar?</h2>
+                <h2 class="section-title">Traga a DBSuper para sua Empresa</h2>
                 <div class="contact-options">
-                    <a href="mailto:DBSuper7zz@gmail.com" class="contact-link"><i class="fas fa-envelope"></i>E-mail</a>
+                    <a href="mailto:DBSuper7zz@gmail.com" class="contact-link"><i class="fas fa-envelope"></i> E-mail</a>
                     <a href="https://wa.me/5511978356569" target="_blank" class="contact-link"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                     <a href="https://instagram.com/dbsuper7z" target="_blank" class="contact-link"><i class="fab fa-instagram"></i> Instagram</a>
                 </div>
@@ -508,7 +456,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 DB Super. Todos os direitos reservados.</p>
+            <p>&copy; 2026 DBSuper Robótica & Inteligência Preditiva. Todos os direitos reservados.</p>
         </div>
     </footer>
 
@@ -536,7 +484,7 @@
             });
         });
 
-        document.querySelectorAll('.servico-card').forEach(card => {
+        document.querySelectorAll('.solucao-card').forEach(card => {
             card.addEventListener('click', () => {
                 card.classList.toggle('active');
             });
