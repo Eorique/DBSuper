@@ -280,8 +280,8 @@
             display: block;
         }
 
-        /* Setores / Badges */
-        #sobre p {
+        /* Setores / Interactive Badges */
+        #sobre p.description {
             font-size: 1.1rem;
             max-width: 850px;
             margin-bottom: 30px;
@@ -294,29 +294,105 @@
             margin-top: 40px;
         }
 
-        .badge {
+        .sector-btn {
             background: var(--bg-surface);
             border: 1px solid var(--border-color);
-            padding: 12px 20px;
+            padding: 14px 24px;
             font-family: var(--font-title);
             font-size: 0.85rem;
-            font-weight: 700;
+            font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             color: var(--text-white);
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            transition: all 0.2s ease;
+            cursor: pointer;
+            transition: all 0.25s ease;
         }
 
-        .badge i {
+        .sector-btn i {
+            color: var(--fiap-pink);
+            transition: color 0.25s ease;
+        }
+
+        .sector-btn:hover {
+            border-color: var(--fiap-pink);
+            background: var(--bg-surface-hover);
+        }
+
+        .sector-btn.active {
+            background: var(--fiap-pink);
+            border-color: var(--fiap-pink);
+            color: var(--text-white);
+            box-shadow: 0 0 20px var(--fiap-pink-glow);
+        }
+
+        .sector-btn.active i {
+            color: var(--text-white);
+        }
+
+        /* Container do Detalhamento do Setor */
+        .sector-detail-box {
+            margin-top: 30px;
+            background: var(--bg-surface);
+            border: 1px solid var(--fiap-pink);
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .sector-detail-box h3 {
+            font-family: var(--font-title);
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--text-white);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .sector-detail-box h3 i {
             color: var(--fiap-pink);
         }
 
-        .badge:hover {
-            border-color: var(--fiap-pink);
-            background: var(--bg-surface-hover);
+        .sector-detail-box p {
+            font-size: 1rem;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .sector-features {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .sector-features li {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            font-size: 0.9rem;
+            color: var(--text-white);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .sector-features li i {
+            color: var(--fiap-pink);
+            margin-top: 3px;
         }
 
         /* Contato */
@@ -408,6 +484,10 @@
             .contact-options {
                 grid-template-columns: 1fr;
             }
+
+            .sector-detail-box {
+                padding: 25px;
+            }
         }
     </style>
 </head>
@@ -420,7 +500,7 @@
             <nav>
                 <ul>
                     <li><a href="#solucoes">Soluções</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#sobre">Setores</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
@@ -434,7 +514,7 @@
                     <i class="fas fa-bolt"></i> Evolução contínua. Soluções que nunca param de crescer com você.
                 </div>
                 <h1>Robôs Modelo TJBot e <span>Inteligência Preditiva</span></h1>
-                <p>Projetamos hardware robótico customizável integrado a redes de sensores IoT. Automação avançada, manutenção preditiva e suporte especializado para a área médica e grandes indústrias.</p>
+                <p>Projetamos hardware robótico customizável integrado a redes de sensores IoT. Automação avançada, manutenção preditiva e suporte especializado para a área médica, indústria 5.0 e corporativo.</p>
                 <a href="#contato" class="cta-button"><i class="fas fa-arrow-right"></i> Monte seu Robô</a>
             </div>
         </section>
@@ -478,14 +558,30 @@
         <section id="sobre">
             <div class="container">
                 <h2 class="section-title">Adaptável a <span>Qualquer Setor</span></h2>
-                <p>Na DBSuper, a tecnologia evolui com o seu negócio. Combinamos a flexibilidade do **TJBot** a algoritmos preditivos e engenharia de hardware customizada para operações críticas.</p>
+                <p class="description">Na DBSuper, a tecnologia evolui com o seu negócio. Clique em uma área abaixo para entender como o robô opera em cada ecossistema específico:</p>
                 
+                <!-- Abas Interativas -->
                 <div class="areas-badges">
-                    <span class="badge"><i class="fas fa-hospital"></i> Medicina & Saúde</span>
-                    <span class="badge"><i class="fas fa-industry"></i> Indústria 4.0</span>
-                    <span class="badge"><i class="fas fa-vial"></i> Laboratórios</span>
-                    <span class="badge"><i class="fas fa-boxes-stacked"></i> Logística</span>
-                    <span class="badge"><i class="fas fa-building-user"></i> Corporativo</span>
+                    <button class="sector-btn active" data-sector="medicina">
+                        <i class="fas fa-notes-medical"></i> Medicina & Saúde
+                    </button>
+                    <button class="sector-btn" data-sector="industria">
+                        <i class="fas fa-industry"></i> Indústria 5.0
+                    </button>
+                    <button class="sector-btn" data-sector="laboratorios">
+                        <i class="fas fa-vial"></i> Laboratórios
+                    </button>
+                    <button class="sector-btn" data-sector="logistica">
+                        <i class="fas fa-boxes-stacked"></i> Logística
+                    </button>
+                    <button class="sector-btn" data-sector="corporativo">
+                        <i class="fas fa-building-user"></i> Corporativo
+                    </button>
+                </div>
+
+                <!-- Painel de Detalhes Dinâmico -->
+                <div class="sector-detail-box" id="sector-display">
+                    <!-- O conteúdo é inserido via JavaScript -->
                 </div>
             </div>
         </section>
@@ -509,6 +605,95 @@
     </footer>
 
     <script>
+        // Dados explicativos para cada setor
+        const sectorData = {
+            medicina: {
+                title: "Medicina & Saúde",
+                icon: "fas fa-notes-medical",
+                description: "No ambiente hospitalar, o robô TJBot atua como um assistente físico e digital de alta precisão, focado em preservar equipamentos vitais e dar suporte à rotina da equipe médica.",
+                features: [
+                    "Monitoramento em tempo real de câmaras de vacina e bolsas de sangue.",
+                    "Diagnóstico preditivo em ressonâncias magnéticas e bisturis elétricos.",
+                    "Assistência por voz para médicos consultarem protocolos de triagem.",
+                    "Interação amigável para recepção ou acompanhamento de pacientes."
+                ]
+            },
+            industria: {
+                title: "Indústria 5.0",
+                icon: "fas fa-industry",
+                description: "Na Indústria 5.0, o foco é a colaboração harmônica entre humanos e robôs inteligentes (Cobots). O dispositivo se integra à linha de produção para garantir segurança, ergonômica e eficiência.",
+                features: [
+                    "Colaboração homem-máquina direta em células de trabalho.",
+                    "Detecção de anomalias por ruído e vibração via sensores IoT acoplados.",
+                    "Correção autônoma de parâmetros operacionais antes de panes.",
+                    "Monitoramento térmico contínuo em motores e painéis de alta tensão."
+                ]
+            },
+            laboratorios: {
+                title: "Laboratórios",
+                icon: "fas fa-vial",
+                description: "Garante ambiente controlado e auditoria rigorosa de insumos em testes clínicos, farmacêuticos ou químicos.",
+                features: [
+                    "Verificação contínua de umidade, temperatura e pureza do ar.",
+                    "Rastreamento de amostras e frascos através de leitores RFID/Ópticos.",
+                    "Alertas automáticos de vazamento de gases ou contaminação.",
+                    "Log em tempo real de experimentos e testes com sincronização em nuvem."
+                ]
+            },
+            logistica: {
+                title: "Logística & Estoque",
+                icon: "fas fa-boxes-stacked",
+                description: "Atua na automação da gestão de inventários e no monitoramento de condições ambientais dentro de galpões e frotas.",
+                features: [
+                    "Auditoria autônoma de prateleiras e contagem de itens em tempo real.",
+                    "Controle de temperatura em caminhões e câmaras frias de transporte.",
+                    "Alertas visuais e sonoros de segurança em zonas de tráfego de empilhadeiras.",
+                    "Integração rápida com sistemas ERP e WMS corporativos."
+                ]
+            },
+            corporativo: {
+                title: "Corporativo & Escritórios",
+                icon: "fas fa-building-user",
+                description: "Transforma a experiência do escritório com um assistente físico executivo capaz de otimizar reuniões e a produtividade da equipe.",
+                features: [
+                    "Atendimento e recepção inteligente para visitantes e clientes.",
+                    "Consulta rápida de relatórios financeiros e KPIs via comandos de voz.",
+                    "Gestão de agendamento de salas e recursos físicos do escritório.",
+                    "Controle inteligente de iluminação e climatização conforme presença."
+                ]
+            }
+        };
+
+        // Função para atualizar o painel de detalhes do setor
+        function updateSectorDetail(sectorKey) {
+            const data = sectorData[sectorKey];
+            const display = document.getElementById('sector-display');
+            
+            display.innerHTML = `
+                <h3><i class="${data.icon}"></i> ${data.title}</h3>
+                <p>${data.description}</p>
+                <ul class="sector-features">
+                    ${data.features.map(feat => `<li><i class="fas fa-check-circle"></i> <span>${feat}</span></li>`).join('')}
+                </ul>
+            `;
+        }
+
+        // Event listeners para as abas dos setores
+        const sectorButtons = document.querySelectorAll('.sector-btn');
+        sectorButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                sectorButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                const sector = button.getAttribute('data-sector');
+                updateSectorDetail(sector);
+            });
+        });
+
+        // Inicializar com o setor Medicina carregado
+        updateSectorDetail('medicina');
+
+        // Menu Mobile Toggle
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('header nav');
 
@@ -517,6 +702,7 @@
             menuToggle.textContent = nav.classList.contains('active') ? '✕' : '☰';
         });
 
+        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -534,6 +720,7 @@
             });
         });
 
+        // Toggle dos cards de soluções
         document.querySelectorAll('.solucao-card').forEach(card => {
             card.addEventListener('click', () => {
                 card.classList.toggle('active');
