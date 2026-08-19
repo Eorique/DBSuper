@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DBSuper — Robótica TJBot & Inteligência Preditiva</title>
+    <title>DBSuper — Cybernetics & PREDiCTiVE iA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,16 +14,18 @@
         }
 
         :root {
-            --bg-black: #060608;
-            --bg-surface: #0f0f14;
-            --bg-surface-hover: #16161d;
-            --fiap-pink: #ed145b;
-            --fiap-pink-hover: #d00d4d;
-            --fiap-pink-glow: rgba(237, 20, 91, 0.35);
-            --border-color: rgba(255, 255, 255, 0.08);
-            --text-white: #ffffff;
-            --text-gray: #a1a1aa;
-            --font-title: 'Montserrat', sans-serif;
+            --bg-black: #05030a;
+            --bg-surface: #0d081a;
+            --bg-surface-hover: #150e2a;
+            --purple-neon: #a855f7;
+            --purple-bright: #c084fc;
+            --purple-dark: #6b21a8;
+            --purple-glow: rgba(168, 85, 247, 0.45);
+            --border-purple: rgba(168, 85, 247, 0.25);
+            --text-white: #f8fafc;
+            --text-gray: #94a3b8;
+            --font-tech: 'Orbitron', sans-serif;
+            --font-sub: 'Rajdhani', sans-serif;
             --font-body: 'Inter', sans-serif;
         }
 
@@ -33,6 +35,11 @@
             font-family: var(--font-body);
             line-height: 1.6;
             overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(168, 85, 247, 0.15), transparent 50%),
+                linear-gradient(to right, rgba(168, 85, 247, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(168, 85, 247, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 40px 40px, 40px 40px;
         }
 
         .container {
@@ -41,14 +48,14 @@
             margin: 0 auto;
         }
 
-        /* Header FIAP Style */
+        /* Header Cyberpunk */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(6, 6, 8, 0.9);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--border-color);
+            background: rgba(5, 3, 10, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-purple);
             z-index: 1000;
         }
 
@@ -60,17 +67,18 @@
         }
 
         .logo {
-            font-family: var(--font-title);
+            font-family: var(--font-tech);
             font-size: 1.6rem;
             font-weight: 900;
             color: var(--text-white);
             text-transform: uppercase;
-            letter-spacing: -0.5px;
+            letter-spacing: 2px;
             text-decoration: none;
+            text-shadow: 0 0 10px var(--purple-glow);
         }
 
         .logo span {
-            color: var(--fiap-pink);
+            color: var(--purple-neon);
         }
 
         nav ul {
@@ -80,18 +88,20 @@
         }
 
         nav a {
-            font-family: var(--font-title);
+            font-family: var(--font-sub);
             color: var(--text-white);
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 1.05rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.2s ease;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
         nav a:hover {
-            color: var(--fiap-pink);
+            color: var(--purple-bright);
+            text-shadow: 0 0 8px var(--purple-glow);
         }
 
         .menu-toggle {
@@ -103,9 +113,9 @@
             cursor: pointer;
         }
 
-        /* Hero FIAP Style */
+        /* Hero Futurista */
         .hero {
-            padding: 200px 0 120px;
+            padding: 220px 0 120px;
             position: relative;
         }
 
@@ -113,45 +123,48 @@
             content: '';
             position: absolute;
             top: 20%;
-            right: -10%;
-            width: 400px;
-            height: 400px;
-            background: var(--fiap-pink);
-            filter: blur(180px);
-            opacity: 0.15;
+            right: -5%;
+            width: 450px;
+            height: 450px;
+            background: var(--purple-neon);
+            filter: blur(200px);
+            opacity: 0.25;
             pointer-events: none;
         }
 
         .slogan-tag {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            font-family: var(--font-title);
-            font-size: 0.75rem;
-            font-weight: 800;
+            gap: 10px;
+            font-family: var(--font-sub);
+            font-size: 0.9rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--fiap-pink);
-            background: rgba(237, 20, 91, 0.1);
-            border-left: 3px solid var(--fiap-pink);
-            padding: 8px 16px;
-            margin-bottom: 24px;
+            letter-spacing: 2px;
+            color: var(--purple-bright);
+            background: rgba(168, 85, 247, 0.1);
+            border: 1px solid var(--border-purple);
+            padding: 8px 20px;
+            margin-bottom: 28px;
+            clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%);
+            box-shadow: 0 0 15px var(--purple-glow);
         }
 
         .hero h1 {
-            font-family: var(--font-title);
-            font-size: 3.8rem;
+            font-family: var(--font-tech);
+            font-size: 3.5rem;
             font-weight: 900;
             color: var(--text-white);
             text-transform: uppercase;
-            line-height: 1.05;
-            letter-spacing: -1px;
+            line-height: 1.1;
+            letter-spacing: 1px;
             max-width: 900px;
             margin-bottom: 24px;
         }
 
         .hero h1 span {
-            color: var(--fiap-pink);
+            color: var(--purple-neon);
+            text-shadow: 0 0 20px var(--purple-glow);
         }
 
         .hero p {
@@ -166,46 +179,49 @@
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            background: var(--fiap-pink);
+            background: linear-gradient(135deg, var(--purple-neon), var(--purple-dark));
             color: var(--text-white);
-            padding: 16px 36px;
-            font-family: var(--font-title);
-            font-weight: 800;
-            font-size: 0.9rem;
+            padding: 18px 40px;
+            font-family: var(--font-sub);
+            font-weight: 700;
+            font-size: 1.1rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             text-decoration: none;
-            transition: all 0.2s ease;
-            box-shadow: 0 0 25px var(--fiap-pink-glow);
+            transition: all 0.3s ease;
+            box-shadow: 0 0 25px var(--purple-glow);
+            clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
         }
 
         .cta-button:hover {
-            background: var(--fiap-pink-hover);
             transform: translateY(-2px);
-            box-shadow: 0 0 35px rgba(237, 20, 91, 0.5);
+            box-shadow: 0 0 40px rgba(168, 85, 247, 0.7);
+            background: linear-gradient(135deg, var(--purple-bright), var(--purple-neon));
         }
 
         /* Seções */
         section {
             padding: 100px 0;
-            border-top: 1px solid var(--border-color);
+            border-top: 1px solid var(--border-purple);
+            position: relative;
         }
 
         .section-title {
-            font-family: var(--font-title);
+            font-family: var(--font-tech);
             font-size: 2.2rem;
             font-weight: 900;
             color: var(--text-white);
             text-transform: uppercase;
-            letter-spacing: -0.5px;
+            letter-spacing: 1px;
             margin-bottom: 50px;
         }
 
         .section-title span {
-            color: var(--fiap-pink);
+            color: var(--purple-neon);
+            text-shadow: 0 0 15px var(--purple-glow);
         }
 
-        /* Cards FIAP Style */
+        /* Cards Futuristas */
         .solucoes-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -213,56 +229,59 @@
         }
 
         .solucao-card {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-color);
+            background: rgba(13, 8, 26, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-purple);
             padding: 36px 28px;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             cursor: pointer;
             position: relative;
             overflow: hidden;
         }
 
-        .solucao-card::before {
+        .solucao-card::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--fiap-pink);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--purple-glow) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
         }
 
         .solucao-card:hover {
             background: var(--bg-surface-hover);
-            border-color: rgba(237, 20, 91, 0.3);
-            transform: translateY(-4px);
+            border-color: var(--purple-neon);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
         }
 
-        .solucao-card:hover::before {
-            transform: scaleX(1);
+        .solucao-card:hover::after {
+            opacity: 0.3;
         }
 
         .solucao-card .icon-container {
-            font-size: 1.8rem;
-            color: var(--fiap-pink);
+            font-size: 2rem;
+            color: var(--purple-neon);
             margin-bottom: 24px;
+            text-shadow: 0 0 15px var(--purple-glow);
         }
 
         .solucao-card h3 {
-            font-family: var(--font-title);
-            font-size: 1.25rem;
-            font-weight: 800;
+            font-family: var(--font-sub);
+            font-size: 1.4rem;
+            font-weight: 700;
             color: var(--text-white);
             text-transform: uppercase;
             margin-bottom: 12px;
-            letter-spacing: -0.3px;
+            letter-spacing: 1px;
         }
 
         .solucao-card p {
-            font-size: 0.92rem;
+            font-size: 0.95rem;
             color: var(--text-gray);
             line-height: 1.6;
         }
@@ -271,16 +290,16 @@
             display: none;
             margin-top: 16px;
             padding-top: 16px;
-            border-top: 1px solid var(--border-color);
+            border-top: 1px solid var(--border-purple);
             font-size: 0.88rem;
-            color: var(--text-white);
+            color: var(--purple-bright);
         }
 
         .solucao-card.active .extra-info {
             display: block;
         }
 
-        /* Setores / Interactive Badges */
+        /* Setores / Badges Interativas */
         #sobre p.description {
             font-size: 1.1rem;
             max-width: 850px;
@@ -290,84 +309,103 @@
         .areas-badges {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 14px;
             margin-top: 40px;
         }
 
         .sector-btn {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-color);
-            padding: 14px 24px;
-            font-family: var(--font-title);
-            font-size: 0.85rem;
-            font-weight: 800;
+            background: rgba(13, 8, 26, 0.7);
+            border: 1px solid var(--border-purple);
+            padding: 16px 28px;
+            font-family: var(--font-sub);
+            font-size: 1rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1.5px;
             color: var(--text-white);
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             cursor: pointer;
-            transition: all 0.25s ease;
+            transition: all 0.3s ease;
+            clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
         }
 
         .sector-btn i {
-            color: var(--fiap-pink);
-            transition: color 0.25s ease;
+            color: var(--purple-neon);
+            transition: color 0.3s ease;
         }
 
         .sector-btn:hover {
-            border-color: var(--fiap-pink);
+            border-color: var(--purple-bright);
             background: var(--bg-surface-hover);
+            box-shadow: 0 0 15px var(--purple-glow);
         }
 
         .sector-btn.active {
-            background: var(--fiap-pink);
-            border-color: var(--fiap-pink);
+            background: var(--purple-neon);
+            border-color: var(--purple-bright);
             color: var(--text-white);
-            box-shadow: 0 0 20px var(--fiap-pink-glow);
+            box-shadow: 0 0 25px var(--purple-glow);
         }
 
         .sector-btn.active i {
             color: var(--text-white);
         }
 
-        /* Container do Detalhamento do Setor */
+        /* Painel Tecnológico do Setor */
         .sector-detail-box {
-            margin-top: 30px;
-            background: var(--bg-surface);
-            border: 1px solid var(--fiap-pink);
+            margin-top: 35px;
+            background: rgba(13, 8, 26, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--purple-neon);
             padding: 40px;
             position: relative;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 0 35px rgba(168, 85, 247, 0.25);
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .sector-detail-box::before {
+            content: 'SYSTEM_ANALYSIS // ACTIVE';
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--purple-neon);
+            color: var(--bg-black);
+            font-family: var(--font-tech);
+            font-size: 0.65rem;
+            font-weight: 900;
+            padding: 2px 10px;
+            letter-spacing: 1px;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(12px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         .sector-detail-box h3 {
-            font-family: var(--font-title);
-            font-size: 1.5rem;
+            font-family: var(--font-tech);
+            font-size: 1.6rem;
             font-weight: 900;
             color: var(--text-white);
             text-transform: uppercase;
             margin-bottom: 15px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
+            letter-spacing: 1px;
         }
 
         .sector-detail-box h3 i {
-            color: var(--fiap-pink);
+            color: var(--purple-neon);
+            text-shadow: 0 0 10px var(--purple-glow);
         }
 
         .sector-detail-box p {
-            font-size: 1rem;
+            font-size: 1.05rem;
             color: var(--text-gray);
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             line-height: 1.7;
         }
 
@@ -375,23 +413,22 @@
             list-style: none;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
+            gap: 16px;
         }
 
         .sector-features li {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--border-color);
-            padding: 15px;
-            font-size: 0.9rem;
+            background: rgba(168, 85, 247, 0.05);
+            border: 1px solid var(--border-purple);
+            padding: 16px;
+            font-size: 0.95rem;
             color: var(--text-white);
             display: flex;
             align-items: flex-start;
-            gap: 10px;
+            gap: 12px;
         }
 
         .sector-features li i {
-            color: var(--fiap-pink);
+            color: var(--purple-bright);
             margin-top: 3px;
         }
 
@@ -404,48 +441,50 @@
         }
 
         .contact-link {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-color);
-            padding: 22px;
+            background: rgba(13, 8, 26, 0.7);
+            border: 1px solid var(--border-purple);
+            padding: 24px;
             text-align: center;
             color: var(--text-white);
             text-decoration: none;
-            font-family: var(--font-title);
-            font-weight: 800;
-            font-size: 0.9rem;
+            font-family: var(--font-sub);
+            font-weight: 700;
+            font-size: 1.1rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 12px;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
         }
 
         .contact-link i {
-            color: var(--fiap-pink);
-            font-size: 1.2rem;
+            color: var(--purple-neon);
+            font-size: 1.3rem;
+            transition: transform 0.3s ease;
         }
 
         .contact-link:hover {
-            background: var(--fiap-pink);
-            border-color: var(--fiap-pink);
-            box-shadow: 0 0 25px var(--fiap-pink-glow);
+            background: var(--purple-neon);
+            border-color: var(--purple-bright);
+            box-shadow: 0 0 30px var(--purple-glow);
         }
 
         .contact-link:hover i {
             color: var(--text-white);
+            transform: scale(1.1);
         }
 
         /* Footer */
         footer {
             padding: 40px 0;
-            border-top: 1px solid var(--border-color);
-            font-family: var(--font-title);
-            font-size: 0.8rem;
-            font-weight: 600;
+            border-top: 1px solid var(--border-purple);
+            font-family: var(--font-tech);
+            font-size: 0.75rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             color: var(--text-gray);
             text-align: center;
         }
@@ -453,7 +492,7 @@
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.3rem;
             }
 
             .menu-toggle {
@@ -467,7 +506,7 @@
                 left: 0;
                 width: 100%;
                 background: var(--bg-black);
-                border-bottom: 1px solid var(--border-color);
+                border-bottom: 1px solid var(--border-purple);
                 padding: 24px 0;
             }
 
@@ -495,7 +534,7 @@
 
     <header>
         <div class="container">
-            <a href="#" class="logo">DB<span>Super</span></a>
+            <a href="#" class="logo">DB<span>SUPER</span></a>
             <button class="menu-toggle" aria-label="Toggle menu">☰</button>
             <nav>
                 <ul>
@@ -511,45 +550,45 @@
         <section class="hero">
             <div class="container">
                 <div class="slogan-tag">
-                    <i class="fas fa-bolt"></i> Evolução contínua. Soluções que nunca param de crescer com você.
+                    <i class="fas fa-bolt"></i> EVOLUÇÃO CONTÍNUA // SOLUÇÕES PREDITIVAS
                 </div>
-                <h1>Robôs Modelo TJBot e <span>Inteligência Preditiva</span></h1>
-                <p>Projetamos hardware robótico customizável integrado a redes de sensores IoT. Automação avançada, manutenção preditiva e suporte especializado para a área médica, indústria 5.0 e corporativo.</p>
-                <a href="#contato" class="cta-button"><i class="fas fa-arrow-right"></i> Monte seu Robô</a>
+                <h1>ROBÓTICA TJBOT & <span>INTELIGÊNCIA PREDITIVA</span></h1>
+                <p>Desenvolvemos arquitetura robótica modular de alta performance integrada a ecossistemas IoT. Automação autônoma, manutenção preditiva em tempo real e suporte cibernético para ambientes críticos.</p>
+                <a href="#contato" class="cta-button"><i class="fas fa-microchip"></i> INICIAR PROJETO</a>
             </div>
         </section>
 
         <section id="solucoes">
             <div class="container">
-                <h2 class="section-title">Tecnologia <span>& Ecossistema</span></h2>
+                <h2 class="section-title">TECNOLOGIA <span>& ECOSSISTEMA</span></h2>
                 
                 <div class="solucoes-grid">
                     <div class="solucao-card">
                         <div class="icon-container"><i class="fas fa-robot"></i></div>
-                        <h3>Hardware TJBot Modular</h3>
-                        <p>Estrutura leve e customizável equipada com câmeras, sensores e braços mecânicos acoplados para atender demandas específicas.</p>
-                        <p class="extra-info">Customização completa de carcaça, componentes e protocolos de comunicação física.</p>
+                        <h3>Hardware Modular TJBot</h3>
+                        <p>Arquitetura adaptável equipada com visão computacional, sensores avançados e atuadores robóticos para demandas complexas.</p>
+                        <p class="extra-info">Customização física total, barramentos de comunicação industrial e robótica responsiva.</p>
                     </div>
 
                     <div class="solucao-card">
                         <div class="icon-container"><i class="fas fa-notes-medical"></i></div>
-                        <h3>Aplicação na Área Médica</h3>
-                        <p>Monitoramento contínuo de equipamentos hospitalares e assistência em tempo real para equipes de saúde em UTIs e laboratórios.</p>
-                        <p class="extra-info">Garante controle rígido de temperatura em vacinas e previne falhas em equipamentos cirúrgicos.</p>
+                        <h3>Aplicação Médica de Precisão</h3>
+                        <p>Monitoramento contínuo de sistemas vitais e suporte de alta disponibilidade para UTIs e laboratórios analíticos.</p>
+                        <p class="extra-info">Controle térmico em tempo real para imunobiológicos e diagnósticos de suporte cirúrgico.</p>
                     </div>
 
                     <div class="solucao-card">
-                        <div class="icon-container"><i class="fas fa-microchip"></i></div>
-                        <h3>Análise IoT & Preditiva</h3>
-                        <p>Sensores remotos monitoram vibração e temperatura para antecipar panes e disparar ações de correção instantâneas.</p>
-                        <p class="extra-info">Processamento em tempo real reduzindo custos operacionais e paradas não programadas.</p>
+                        <div class="icon-container"><i class="fas fa-network-wired"></i></div>
+                        <h3>Telemetria IoT Preditiva</h3>
+                        <p>Processamento Edge em tempo real monitorando padrões térmicos e vibracionais para erradicação de falhas não planejadas.</p>
+                        <p class="extra-info">Algoritmos neurais dedicados a reduzir downtime operacional e otimizar ativos.</p>
                     </div>
 
                     <div class="solucao-card">
-                        <div class="icon-container"><i class="fas fa-user-gear"></i></div>
-                        <h3>Assistente Pessoal Corporativo</h3>
-                        <p>Interface interativa por voz ou texto treinada na base de dados da sua empresa para relatórios e suporte diário.</p>
-                        <p class="extra-info">Entrega de métricas operacionais e respostas rápidas diretamente para o colaborador.</p>
+                        <div class="icon-container"><i class="fas fa-brain"></i></div>
+                        <h3>Assistente Pessoal Cognitivo</h3>
+                        <p>Interface neural de linguagem natural conectada diretamente à base de conhecimento e métricas da sua corporação.</p>
+                        <p class="extra-info">Respostas estruturadas instantâneas e geração automatizada de relatórios gerenciais.</p>
                     </div>
                 </div>
             </div>
@@ -557,38 +596,38 @@
 
         <section id="sobre">
             <div class="container">
-                <h2 class="section-title">Adaptável a <span>Qualquer Setor</span></h2>
-                <p class="description">Na DBSuper, a tecnologia evolui com o seu negócio. Clique em uma área abaixo para entender como o robô opera em cada ecossistema específico:</p>
+                <h2 class="section-title">ADAPTAÇÃO A <span>SETORES CRÍTICOS</span></h2>
+                <p class="description">Selecione um segmento abaixo para visualizar os protocolos de atuação do ecossistema DBSuper:</p>
                 
                 <!-- Abas Interativas -->
                 <div class="areas-badges">
                     <button class="sector-btn active" data-sector="medicina">
-                        <i class="fas fa-notes-medical"></i> Medicina & Saúde
+                        <i class="fas fa-heart-pulse"></i> Medicina & Saúde
                     </button>
                     <button class="sector-btn" data-sector="industria">
                         <i class="fas fa-industry"></i> Indústria 5.0
                     </button>
                     <button class="sector-btn" data-sector="laboratorios">
-                        <i class="fas fa-vial"></i> Laboratórios
+                        <i class="fas fa-flask"></i> Laboratórios
                     </button>
                     <button class="sector-btn" data-sector="logistica">
-                        <i class="fas fa-boxes-stacked"></i> Logística
+                        <i class="fas fa-cubes"></i> Logística
                     </button>
                     <button class="sector-btn" data-sector="corporativo">
-                        <i class="fas fa-building-user"></i> Corporativo
+                        <i class="fas fa-building-shield"></i> Corporativo
                     </button>
                 </div>
 
-                <!-- Painel de Detalhes Dinâmico -->
+                <!-- Painel Futurista de Detalhes -->
                 <div class="sector-detail-box" id="sector-display">
-                    <!-- O conteúdo é inserido via JavaScript -->
+                    <!-- O conteúdo é injetado via JS -->
                 </div>
             </div>
         </section>
 
         <section id="contato">
             <div class="container">
-                <h2 class="section-title">Inicie o <span>Projeto</span></h2>
+                <h2 class="section-title">INICIE O <span>DESENVOLVIMENTO</span></h2>
                 <div class="contact-options">
                     <a href="mailto:DBSuper7zz@gmail.com" class="contact-link"><i class="fas fa-envelope"></i> E-mail Direct</a>
                     <a href="https://wa.me/5511978356569" target="_blank" class="contact-link"><i class="fab fa-whatsapp"></i> WhatsApp</a>
@@ -600,71 +639,71 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 DBSuper — Robótica & Soluções Preditivas</p>
+            <p>&copy; 2026 DBSuper — Next-Gen Robotics & Predictive Systems</p>
         </div>
     </footer>
 
     <script>
-        // Dados explicativos para cada setor
+        // Dados explicativos dos setores
         const sectorData = {
             medicina: {
                 title: "Medicina & Saúde",
-                icon: "fas fa-notes-medical",
-                description: "No ambiente hospitalar, o robô TJBot atua como um assistente físico e digital de alta precisão, focado em preservar equipamentos vitais e dar suporte à rotina da equipe médica.",
+                icon: "fas fa-heart-pulse",
+                description: "No ecossistema de saúde, o TJBot opera como um nó ciber-físico em tempo real, dedicado à proteção de equipamentos de alto custo e à assistência interativa das equipes hospitalares.",
                 features: [
-                    "Monitoramento em tempo real de câmaras de vacina e bolsas de sangue.",
-                    "Diagnóstico preditivo em ressonâncias magnéticas e bisturis elétricos.",
-                    "Assistência por voz para médicos consultarem protocolos de triagem.",
-                    "Interação amigável para recepção ou acompanhamento de pacientes."
+                    "Monitoramento em tempo real de câmaras térmicas de vacinas e biológicos.",
+                    "Telemetria preditiva aplicada a tomógrafos e ressonâncias magnéticas.",
+                    "Assistente por comando de voz para rápido acesso a prontuários e diretrizes.",
+                    "Triagem automatizada e orientação interativa na recepção de pacientes."
                 ]
             },
             industria: {
                 title: "Indústria 5.0",
                 icon: "fas fa-industry",
-                description: "Na Indústria 5.0, o foco é a colaboração harmônica entre humanos e robôs inteligentes (Cobots). O dispositivo se integra à linha de produção para garantir segurança, ergonômica e eficiência.",
+                description: "Alinhado aos princípios da Indústria 5.0, o TJBot atua como um cobot (robô colaborativo) focado em unificar a intuição humana à precisão computacional autônoma.",
                 features: [
-                    "Colaboração homem-máquina direta em células de trabalho.",
-                    "Detecção de anomalias por ruído e vibração via sensores IoT acoplados.",
-                    "Correção autônoma de parâmetros operacionais antes de panes.",
-                    "Monitoramento térmico contínuo em motores e painéis de alta tensão."
+                    "Interação homem-máquina segura em células de manufatura complexas.",
+                    "Análise acústica e vibracional via sensores IoT para antecipar panes.",
+                    "Reconfiguração preditiva autônoma de parâmetros operacionais.",
+                    "Telemetria térmica avançada em motores e painéis de alta tensão."
                 ]
             },
             laboratorios: {
-                title: "Laboratórios",
-                icon: "fas fa-vial",
-                description: "Garante ambiente controlado e auditoria rigorosa de insumos em testes clínicos, farmacêuticos ou químicos.",
+                title: "Laboratórios Analíticos",
+                icon: "fas fa-flask",
+                description: "Automação e rastreabilidade rigorosa de condições bioambientais em amostragem e síntese farmacêutica.",
                 features: [
-                    "Verificação contínua de umidade, temperatura e pureza do ar.",
-                    "Rastreamento de amostras e frascos através de leitores RFID/Ópticos.",
-                    "Alertas automáticos de vazamento de gases ou contaminação.",
-                    "Log em tempo real de experimentos e testes com sincronização em nuvem."
+                    "Controle biométrico de temperatura, umidade e particulados no ar.",
+                    "Rastreamento automatizado de amostras por visão computacional.",
+                    "Emissão de alertas em tempo real sobre desvios de protocolo ou contaminação.",
+                    "Registro imutável de ensaios e sincronização direta com a nuvem."
                 ]
             },
             logistica: {
-                title: "Logística & Estoque",
-                icon: "fas fa-boxes-stacked",
-                description: "Atua na automação da gestão de inventários e no monitoramento de condições ambientais dentro de galpões e frotas.",
+                title: "Logística Autônoma",
+                icon: "fas fa-cubes",
+                description: "Otimização de rotas internas e supervisão de cadeias de suprimentos com alta complexidade operacional.",
                 features: [
-                    "Auditoria autônoma de prateleiras e contagem de itens em tempo real.",
-                    "Controle de temperatura em caminhões e câmaras frias de transporte.",
-                    "Alertas visuais e sonoros de segurança em zonas de tráfego de empilhadeiras.",
-                    "Integração rápida com sistemas ERP e WMS corporativos."
+                    "Auditoria em tempo real de inventário por leitura óptica e RFID.",
+                    "Supervisão contínua da cadeia de frio em frotas de transporte.",
+                    "Alertas preditivos de colisão e segurança em galpões industriais.",
+                    "Sincronização imediata com plataformas de gestão ERP e WMS."
                 ]
             },
             corporativo: {
-                title: "Corporativo & Escritórios",
-                icon: "fas fa-building-user",
-                description: "Transforma a experiência do escritório com um assistente físico executivo capaz de otimizar reuniões e a produtividade da equipe.",
+                title: "Corporativo & Smart Offices",
+                icon: "fas fa-building-shield",
+                description: "Transforma sedes corporativas em ambientes inteligentes com interatividade física e análise de dados em tempo real.",
                 features: [
-                    "Atendimento e recepção inteligente para visitantes e clientes.",
-                    "Consulta rápida de relatórios financeiros e KPIs via comandos de voz.",
-                    "Gestão de agendamento de salas e recursos físicos do escritório.",
-                    "Controle inteligente de iluminação e climatização conforme presença."
+                    "Recepção cibernética e triagem inteligente de visitantes.",
+                    "Acesso instantâneo a KPIs e balanços através de voz ou chat corporativo.",
+                    "Gerenciamento autônomo de salas de reunião e recursos compartilhados.",
+                    "Automação preditiva de consumo energético e climatização da sede."
                 ]
             }
         };
 
-        // Função para atualizar o painel de detalhes do setor
+        // Atualização dinâmica do painel
         function updateSectorDetail(sectorKey) {
             const data = sectorData[sectorKey];
             const display = document.getElementById('sector-display');
@@ -673,12 +712,12 @@
                 <h3><i class="${data.icon}"></i> ${data.title}</h3>
                 <p>${data.description}</p>
                 <ul class="sector-features">
-                    ${data.features.map(feat => `<li><i class="fas fa-check-circle"></i> <span>${feat}</span></li>`).join('')}
+                    ${data.features.map(feat => `<li><i class="fas fa-chevron-right"></i> <span>${feat}</span></li>`).join('')}
                 </ul>
             `;
         }
 
-        // Event listeners para as abas dos setores
+        // Listeners para os botões de setor
         const sectorButtons = document.querySelectorAll('.sector-btn');
         sectorButtons.forEach(button => {
             button.addEventListener('click', () => {
@@ -690,7 +729,7 @@
             });
         });
 
-        // Inicializar com o setor Medicina carregado
+        // Inicialização
         updateSectorDetail('medicina');
 
         // Menu Mobile Toggle
@@ -720,7 +759,7 @@
             });
         });
 
-        // Toggle dos cards de soluções
+        // Toggle dos cards
         document.querySelectorAll('.solucao-card').forEach(card => {
             card.addEventListener('click', () => {
                 card.classList.toggle('active');
