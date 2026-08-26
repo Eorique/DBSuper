@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kaizen | TJBot Indústria 5.0</title>
+    <title>DBSuper — Projeto Kaizen | TJBot Medical Assistant</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
@@ -46,7 +46,7 @@
             margin: 0 auto;
         }
 
-        /* Header Arredondado estilo Glassmorphism */
+        /* Header Curvo Glassmorphism */
         header {
             position: fixed;
             top: 20px;
@@ -54,7 +54,7 @@
             transform: translateX(-50%);
             width: 90%;
             max-width: 1140px;
-            background: rgba(10, 6, 20, 0.75);
+            background: rgba(10, 6, 20, 0.8);
             backdrop-filter: blur(20px);
             border: 1px solid var(--border-purple);
             border-radius: 50px;
@@ -72,7 +72,7 @@
 
         .logo {
             font-family: var(--font-tech);
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 900;
             color: var(--text-white);
             text-transform: uppercase;
@@ -88,7 +88,7 @@
 
         nav ul {
             display: flex;
-            gap: 28px;
+            gap: 24px;
             list-style: none;
             padding-right: 15px;
         }
@@ -97,7 +97,7 @@
             font-family: var(--font-sub);
             color: var(--text-white);
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1.5px;
@@ -119,42 +119,40 @@
             padding-right: 15px;
         }
 
-        /* Hero Orgânico e Fluido */
+        /* Hero Médica */
         .hero {
-            padding: 210px 0 90px;
-            position: relative;
+            padding: 210px 0 80px;
             text-align: center;
         }
 
-        /* Slogan em Destaque */
         .slogan-badge {
             display: inline-flex;
             align-items: center;
             gap: 10px;
             font-family: var(--font-sub);
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
             color: var(--purple-bright);
             background: rgba(168, 85, 247, 0.12);
             border: 1px solid var(--purple-neon);
-            padding: 10px 26px;
+            padding: 10px 24px;
             border-radius: 50px;
-            margin-bottom: 28px;
+            margin-bottom: 24px;
             box-shadow: 0 0 20px var(--purple-glow);
         }
 
         .hero h1 {
             font-family: var(--font-tech);
-            font-size: 3rem;
+            font-size: 2.8rem;
             font-weight: 900;
             color: var(--text-white);
             text-transform: uppercase;
             line-height: 1.2;
             letter-spacing: 1px;
             max-width: 950px;
-            margin: 0 auto 24px;
+            margin: 0 auto 20px;
         }
 
         .hero h1 span {
@@ -162,21 +160,21 @@
             text-shadow: 0 0 25px var(--purple-glow);
         }
 
-        .hero-slogan-main {
+        .hero-slogan-sub {
             font-family: var(--font-sub);
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: var(--purple-bright);
             font-weight: 700;
-            letter-spacing: 1px;
             margin-bottom: 20px;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .hero p {
             font-size: 1.1rem;
             color: var(--text-gray);
-            max-width: 820px;
-            margin: 0 auto 40px;
+            max-width: 850px;
+            margin: 0 auto 38px;
             line-height: 1.8;
         }
 
@@ -186,10 +184,10 @@
             gap: 12px;
             background: linear-gradient(135deg, var(--purple-neon), var(--purple-dark));
             color: var(--text-white);
-            padding: 16px 38px;
+            padding: 16px 36px;
             font-family: var(--font-sub);
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             text-decoration: none;
@@ -206,8 +204,7 @@
 
         /* Seções Genericas */
         section {
-            padding: 90px 0;
-            position: relative;
+            padding: 80px 0;
         }
 
         .section-title {
@@ -228,29 +225,91 @@
 
         .section-subtitle {
             text-align: center;
-            max-width: 700px;
+            max-width: 750px;
             margin: 0 auto 40px;
             font-size: 1.05rem;
         }
 
-        /* Badges de Setores Arredondadas */
-        .areas-badges {
+        /* Grid de Soluções Médicas */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-purple);
+            border-radius: 24px;
+            padding: 30px;
+            backdrop-filter: blur(15px);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--purple-bright);
+            box-shadow: 0 15px 35px var(--purple-glow);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(168, 85, 247, 0.15);
+            border: 1px solid var(--purple-neon);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: var(--purple-bright);
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px var(--purple-glow);
+        }
+
+        .feature-card h3 {
+            font-family: var(--font-tech);
+            font-size: 1.3rem;
+            color: var(--text-white);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            line-height: 1.7;
+        }
+
+        /* Simulador Interativo do TJBot */
+        .simulator-box {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-purple);
+            border-radius: 28px;
+            padding: 40px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px var(--purple-glow);
+        }
+
+        .mode-tabs {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 14px;
-            margin-bottom: 40px;
+            gap: 12px;
+            margin-bottom: 35px;
         }
 
-        .sector-btn {
-            background: var(--bg-surface);
+        .mode-btn {
+            background: rgba(6, 4, 12, 0.6);
             border: 1px solid var(--border-purple);
-            padding: 14px 26px;
+            padding: 14px 24px;
             font-family: var(--font-sub);
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             color: var(--text-white);
             display: inline-flex;
             align-items: center;
@@ -258,125 +317,91 @@
             cursor: pointer;
             border-radius: 50px;
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
         }
 
-        .sector-btn i {
+        .mode-btn i {
             color: var(--purple-neon);
         }
 
-        .sector-btn:hover {
+        .mode-btn.active {
+            background: linear-gradient(135deg, var(--purple-neon), var(--purple-dark));
             border-color: var(--purple-bright);
-            background: var(--bg-surface-hover);
-            transform: translateY(-2px);
             box-shadow: 0 8px 20px var(--purple-glow);
         }
 
-        .sector-btn.active {
-            background: linear-gradient(135deg, var(--purple-neon), var(--purple-dark));
-            border-color: var(--purple-bright);
-            color: var(--text-white);
-            box-shadow: 0 10px 25px var(--purple-glow);
-        }
-
-        .sector-btn.active i {
+        .mode-btn.active i {
             color: var(--text-white);
         }
 
-        /* Painel Curvado e Suave */
-        .sector-display-grid {
+        .sim-grid {
             display: grid;
             grid-template-columns: 1.2fr 1fr;
             gap: 35px;
-            background: var(--bg-surface);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--border-purple);
-            border-radius: 28px;
-            padding: 45px;
-            position: relative;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px var(--purple-glow);
+            align-items: center;
             animation: fadeIn 0.4s ease-out;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
+            from { opacity: 0; transform: translateY(12px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .sector-info h3 {
+        .sim-info h3 {
             font-family: var(--font-tech);
-            font-size: 1.7rem;
-            font-weight: 900;
+            font-size: 1.6rem;
             color: var(--text-white);
             text-transform: uppercase;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
             display: flex;
             align-items: center;
-            gap: 14px;
-        }
-
-        .sector-info h3 i {
-            color: var(--purple-neon);
-        }
-
-        .sector-info p {
-            font-size: 1.05rem;
-            color: var(--text-gray);
-            margin-bottom: 28px;
-            line-height: 1.8;
-        }
-
-        .sector-features {
-            list-style: none;
-            display: grid;
-            gap: 14px;
-        }
-
-        .sector-features li {
-            background: rgba(168, 85, 247, 0.06);
-            border: 1px solid var(--border-purple);
-            border-radius: 16px;
-            padding: 16px;
-            font-size: 0.95rem;
-            color: var(--text-white);
-            display: flex;
-            align-items: flex-start;
             gap: 12px;
         }
 
-        .sector-features li i {
-            color: var(--purple-bright);
-            margin-top: 3px;
+        .sim-info h3 i {
+            color: var(--purple-neon);
         }
 
-        /* Visualizador do Modelo TJBot Suavizado */
-        .robot-visualizer {
-            background: rgba(6, 4, 12, 0.7);
+        .sim-info p {
+            font-size: 1.05rem;
+            color: var(--text-gray);
+            margin-bottom: 24px;
+            line-height: 1.8;
+        }
+
+        .sim-benefits {
+            list-style: none;
+            display: grid;
+            gap: 12px;
+        }
+
+        .sim-benefits li {
+            background: rgba(168, 85, 247, 0.06);
             border: 1px solid var(--border-purple);
+            border-radius: 14px;
+            padding: 14px 18px;
+            font-size: 0.95rem;
+            color: var(--text-white);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .sim-benefits li i {
+            color: var(--purple-bright);
+        }
+
+        /* Graphic TJBot */
+        .robot-card-graphic {
+            background: rgba(6, 4, 12, 0.8);
+            border: 2px dashed var(--purple-neon);
             border-radius: 24px;
             padding: 30px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .robot-card-graphic {
-            width: 100%;
-            max-width: 260px;
-            height: 270px;
-            border: 2px dashed var(--purple-neon);
-            border-radius: 24px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
             box-shadow: inset 0 0 25px var(--purple-glow);
-            margin-bottom: 24px;
-            background: rgba(168, 85, 247, 0.03);
+            position: relative;
         }
 
         .robot-avatar {
@@ -384,6 +409,7 @@
             color: var(--purple-bright);
             filter: drop-shadow(0 0 20px var(--purple-neon));
             animation: floatRobot 3.5s ease-in-out infinite;
+            margin-bottom: 20px;
         }
 
         @keyframes floatRobot {
@@ -391,9 +417,7 @@
             50% { transform: translateY(-10px); }
         }
 
-        .module-badge {
-            position: absolute;
-            bottom: -12px;
+        .robot-status-pill {
             background: linear-gradient(135deg, var(--purple-neon), var(--purple-dark));
             color: var(--text-white);
             font-family: var(--font-tech);
@@ -404,45 +428,45 @@
             letter-spacing: 1px;
             text-transform: uppercase;
             box-shadow: 0 5px 15px var(--purple-glow);
+            margin-bottom: 20px;
         }
 
-        .robot-specs-list {
+        .robot-telemetry {
             width: 100%;
             font-family: var(--font-sub);
             font-size: 0.95rem;
             color: var(--text-white);
             border-top: 1px dashed var(--border-purple);
-            padding-top: 18px;
+            padding-top: 16px;
         }
 
-        .robot-specs-list div {
+        .robot-telemetry div {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
-        .robot-specs-list span.val {
+        .robot-telemetry span.val {
             color: var(--purple-bright);
             font-weight: 700;
         }
 
-        /* Seção para Setor Personalizado com Curvas Suaves */
+        /* Formulário de Novas Funcionalidades */
         .custom-request-box {
             background: var(--bg-surface);
             border: 1px solid var(--border-purple);
             border-radius: 28px;
             padding: 45px;
             margin-top: 60px;
-            position: relative;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
         }
 
         .custom-request-box h3 {
             font-family: var(--font-tech);
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             color: var(--text-white);
             text-transform: uppercase;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
             gap: 12px;
@@ -571,7 +595,7 @@
 
         /* Responsive */
         @media (max-width: 900px) {
-            .sector-display-grid {
+            .sim-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -591,7 +615,7 @@
             }
 
             .hero h1 {
-                font-size: 2.1rem;
+                font-size: 2rem;
             }
 
             .menu-toggle {
@@ -620,7 +644,7 @@
                 gap: 20px;
             }
 
-            .custom-request-box {
+            .custom-request-box, .simulator-box {
                 padding: 25px;
             }
         }
@@ -630,13 +654,14 @@
 
     <header>
         <div class="container">
-            <a href="#" class="logo"><span></span>KAIZEN</a>
+            <a href="#" class="logo">DB<span>SUPER</span> // KAIZEN MED</a>
             <button class="menu-toggle" aria-label="Toggle menu">☰</button>
             <nav>
                 <ul>
                     <li><a href="#projeto">O Projeto</a></li>
-                    <li><a href="#modelos">Modelos TJBot</a></li>
-                    <li><a href="#personalizado">Solicitar Setor</a></li>
+                    <li><a href="#funcionalidades">Funções</a></li>
+                    <li><a href="#simulador">Modelo TJBot</a></li>
+                    <li><a href="#personalizado">Novas Funções</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
@@ -644,77 +669,97 @@
     </header>
 
     <main>
-        <!-- Hero Section com o Slogan em Destaque -->
+        <!-- Hero Section -->
         <section class="hero" id="projeto">
             <div class="container">
                 <div class="slogan-badge">
-                    <i class="fas fa-microchip"></i> PROJETO KAIZEN
+                    <i class="fas fa-stethoscope"></i> PROJETO KAIZEN // ÁREA MÉDICA
                 </div>
                 
-                <!-- Slogan Oficial -->
-                <p class="hero-slogan-main">"
+                <p class="hero-slogan-sub">"POUPANDO O TEMPO DO MÉDICO PARA UM ATENDIMENTO MAIS AGILIZADO E PRODUTIVO"</p>
 
-Evolução contínua. Soluções que nunca param de crescer com você.
-"</p>
-
-                <h1>O SEU AUXILIAR INTELIGENTE EM <span>QUALQUER ÁREA</span></h1>
+                <h1>SEU ASSISTENTE DE CABECEIRA NA <span>MEDICINA 5.0</span></h1>
                 
-                <p>Desenvolvido para atender às necessidades diárias do trabalhador no local de trabalho. O TJBot é um assistente que entrega informações em tempo real por comandos de voz, inspeciona condições de materiais com câmeras/visão computacional e monitora sobrecarga ou superaquecimento de maquinários via sensores adaptativos.</p>
+                <p>O <strong>Projeto Kaizen</strong> foi desenvolvido para atuar lado a lado com o médico na ala hospitalar. O TJBot assume tarefas repetitivas — como buscar dados na sala de arquivos, registrar a ficha do paciente por voz e aferir a frequência cardíaca — economizando tempo valioso da equipe de saúde.</p>
                 
-                <a href="#modelos" class="cta-button"><i class="fas fa-robot"></i> EXPLORAR MODELOS TJBOT</a>
+                <a href="#simulador" class="cta-button"><i class="fas fa-robot"></i> TESTAR SIMULAÇÃO DO TJBOT</a>
             </div>
         </section>
 
-        <!-- Seção de Modelos e Interatividade por Área -->
-        <section id="modelos">
+        <!-- Funcionalidades Principais -->
+        <section id="funcionalidades">
             <div class="container">
-                <h2 class="section-title">CONFIGURAÇÕES DO <span>TJBOT POR ÁREA</span></h2>
-                <p class="section-subtitle">Clique na área desejada para ver a simulação de atuação do TJBot e o modelo de hardware configurado para ela:</p>
+                <h2 class="section-title">COMO O TJBOT <span>AUXILIA O MÉDICO</span></h2>
+                <p class="section-subtitle">Pequenas tarefas consomem minutos preciosos de cada consulta. O TJBot elimina esses gargalos operacionais:</p>
                 
-                <!-- Abas dos Setores (Design Arredondado) -->
-                <div class="areas-badges">
-                    <button class="sector-btn active" data-sector="medicina">
-                        <i class="fas fa-heart-pulse"></i> Medicina & Saúde
-                    </button>
-                    <button class="sector-btn" data-sector="industria">
-                        <i class="fas fa-industry"></i> Indústria 5.0
-                    </button>
-                    <button class="sector-btn" data-sector="laboratorios">
-                        <i class="fas fa-flask"></i> Laboratórios
-                    </button>
-                    <button class="sector-btn" data-sector="logistica">
-                        <i class="fas fa-cubes"></i> Logística
-                    </button>
-                    <button class="sector-btn" data-sector="corporativo">
-                        <i class="fas fa-building-shield"></i> Corporativo
-                    </button>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-folder-open"></i></div>
+                        <h3>Consulta de Ficha Sem Deslocamento</h3>
+                        <p>Em vez de sair da ala médica e ir até a sala de arquivos para buscar a ficha e verificar medicamentos, o médico solicita ao TJBot por comando de voz e recebe todas as informações na hora.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-microphone-lines"></i></div>
+                        <h3>Criação e Transcrição Autônoma</h3>
+                        <p>Durante a consulta, o TJBot ouve a conversa entre o médico e o paciente ou recebe o ditado das informações, gerando e salvando a ficha de atendimento automaticamente.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-heart-pulse"></i></div>
+                        <h3>Aferição de Frequência Cardíaca</h3>
+                        <p>Através de sensores acoplados, o TJBot analisa a frequência cardíaca do paciente e transmite o resultado exato ao médico assim que solicitado, simplificando o processo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Simulador do TJBot por Modo de Operação -->
+        <section id="simulador">
+            <div class="container">
+                <h2 class="section-title">SIMULADOR DO <span>TJBOT MÉDICO</span></h2>
+                <p class="section-subtitle">Clique no modo desejado para ver como o robô se comporta e quais sensores são ativados em cada tarefa:</p>
+                
+                <div class="simulator-box">
+                    <!-- Abas Interativas -->
+                    <div class="mode-tabs">
+                        <button class="mode-btn active" data-mode="consulta">
+                            <i class="fas fa-file-medical"></i> Consulta de Prontuário
+                        </button>
+                        <button class="mode-btn" data-mode="registro">
+                            <i class="fas fa-pen-to-square"></i> Transcrição de Ficha
+                        </button>
+                        <button class="mode-btn" data-mode="cardio">
+                            <i class="fas fa-wave-square"></i> Medição Cardíaca
+                        </button>
+                    </div>
+
+                    <!-- Conteúdo Dinâmico -->
+                    <div class="sim-grid" id="sim-display">
+                        <!-- JS vai carregar aqui -->
+                    </div>
                 </div>
 
-                <!-- Painel Curvado: Explicação + Visualizador do TJBot -->
-                <div class="sector-display-grid" id="sector-display">
-                    <!-- Conteúdo dinâmico via JavaScript -->
-                </div>
-
-                <!-- Formulário de Solicitação de Setores Personalizados -->
+                <!-- Formulário para Pedir Funções Não Explicadas / Personalizadas -->
                 <div class="custom-request-box" id="personalizado">
-                    <h3><i class="fas fa-sliders"></i> SUA ÁREA NÃO FOI LISTADA ACIMA?</h3>
-                    <p>O Projeto Kaizen é totalmente adaptável! Descreva seu setor e necessidades que projetaremos um modelo exclusivo do TJBot para o seu ambiente de trabalho.</p>
+                    <h3><i class="fas fa-sliders"></i> PRECISA DE OUTRA FUNÇÃO NO SEU HOSPITAL/CLÍNICA?</h3>
+                    <p>Se a sua rotina médica exige um auxílio que não foi detalhado acima, descreva a necessidade abaixo para adaptarmos os sensores e a IA do TJBot ao seu setor.</p>
                     
                     <form class="custom-request-form" onsubmit="handleCustomSubmit(event)">
                         <div class="form-group">
-                            <label>Seu Nome / Empresa</label>
-                            <input type="text" placeholder="Ex: Dra. Juliana / Indústria Alfa" required>
+                            <label>Nome do Médico / Instituição</label>
+                            <input type="text" placeholder="Ex: Dr. Carlos / Hospital São Lucas" required>
                         </div>
                         <div class="form-group">
-                            <label>Sua Área / Setor</label>
-                            <input type="text" placeholder="Ex: Odontologia, Metalúrgica, Agronegócio..." required>
+                            <label>Especialidade / Ala Médica</label>
+                            <input type="text" placeholder="Ex: Pediatria, UTI, Pronto-Socorro..." required>
                         </div>
                         <div class="form-group full-width">
-                            <label>Como o TJBot deve auxiliar seu trabalhador?</label>
-                            <textarea rows="4" placeholder="Descreva quais arquivos ele deve consultar por voz, quais materiais deve inspecionar por câmera ou quais máquinas deve monitorar..." required></textarea>
+                            <label>Qual nova função você gostaria que o TJBot executasse?</label>
+                            <textarea rows="4" placeholder="Ex: Monitoramento contínuo de oxigenação, leitor de código de barras para checagem de pulseira de leito, lembrete de horários de medicação..." required></textarea>
                         </div>
                         <div class="form-group full-width">
-                            <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> ENVIAR SOLICITAÇÃO SOB MEDIDA</button>
+                            <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> ENVIAR SUGESTÃO DE FUNCIONALIDADE</button>
                         </div>
                     </form>
                 </div>
@@ -724,7 +769,7 @@ Evolução contínua. Soluções que nunca param de crescer com você.
         <!-- Contato -->
         <section id="contato">
             <div class="container">
-                <h2 class="section-title">FALE COM A <span>EQUIPE Kaizen</span></h2>
+                <h2 class="section-title">CONTATO <span>EQUIPE DBSUPER</span></h2>
                 <div class="contact-options">
                     <a href="mailto:DBSuper7zz@gmail.com" class="contact-link"><i class="fas fa-envelope"></i> E-mail Direct</a>
                     <a href="https://wa.me/5511978356569" target="_blank" class="contact-link"><i class="fab fa-whatsapp"></i> WhatsApp</a>
@@ -736,156 +781,116 @@ Evolução contínua. Soluções que nunca param de crescer com você.
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Kaizen — Projeto Kaizen & Indústria 5.0 | Facilitando o trabalho do futuro</p>
+            <p>&copy; 2026 DBSuper — Projeto Kaizen Medical | Otimizando o Tempo do Médico</p>
         </div>
     </footer>
 
     <script>
-        // Dados dos Modelos do TJBot por Área
-        const sectorData = {
-            medicina: {
-                title: "Área Médica & Hospitalar",
+        // Dados de Simulação do TJBot focados no novo Escopo
+        const modeData = {
+            consulta: {
+                title: "Busca Instantânea de Prontuário",
+                icon: "fas fa-file-medical",
+                description: "O médico solicita via comando de voz o nome ou código do paciente. O TJBot conecta-se à base de dados do hospital ou à sala de arquivos digitalizada e reproduz em áudio/display a medicação recomendada e o histórico médico.",
+                benefits: [
+                    "Zero tempo gasto em deslocamento até a sala de arquivos.",
+                    "Revisão imediata de alergias e histórico de medicamentos.",
+                    "Atendimento mais rápido e foco total no paciente."
+                ],
+                spec: {
+                    badge: "MODO: BUSCA DE ARQUIVOS",
+                    iconClass: "fas fa-user-nurse",
+                    status: "Conectado ao BD Hospitalar",
+                    sensors: "Reconhecimento de Voz / Wi-Fi",
+                    action: "Leitura de Prontuários em Tempo Real"
+                }
+            },
+            registro: {
+                title: "Criação Automática da Ficha do Paciente",
+                icon: "fas fa-pen-to-square",
+                description: "Durante o atendimento, o TJBot capta o diálogo entre médico e paciente ou escuta as observações ditadas pelo médico. A IA processa as informações e preenche a ficha médica sem exigir digitação manual.",
+                benefits: [
+                    "Elimina a necessidade de preencher papéis ou digitar durante a consulta.",
+                    "Transcrição precisa dos sintomas e receitas prescritas.",
+                    "Registro automático na ficha digital do paciente."
+                ],
+                benefitsIcon: "fas fa-check-double",
+                spec: {
+                    badge: "MODO: TRANSCRIÇÃO IA",
+                    iconClass: "fas fa-file-signature",
+                    status: "Microfone Sensível Ativo",
+                    sensors: "Processamento NLP / Áudio",
+                    action: "Preenchimento Automático da Ficha"
+                }
+            },
+            cardio: {
+                title: "Medição de Frequência Cardíaca",
                 icon: "fas fa-heart-pulse",
-                description: "Em vez de um médico precisar caminhar até a sala de arquivos para buscar a ficha de um paciente e conferir qual medicamento deve aplicar, o TJBot guarda e consulta esse histórico na hora. Basta perguntar ao robô e receber a confirmação exata imediatamente ao lado do paciente.",
-                features: [
-                    "Acesso instantâneo a fichas de pacientes e dosagens de remédios via voz.",
-                    "Câmera HD para inspecionar estado de ampolas, lacres e insumos.",
-                    "Sensores ambientais para monitorar conservação de vacinas e medicamentos.",
-                    "Agilidade no atendimento sem necessidade de deslocamento à sala de arquivos."
+                description: "O TJBot possui um sensor de pulso/oximetria integrado. O médico orienta o paciente a posicionar o dedo no sensor do robô, e o valor em BPM é transmitido na hora no visor e repassado verbalmente ao médico.",
+                benefits: [
+                    "Aferição rápida de BPM diretamente no robô assistente.",
+                    "Alertas sonoros para frequências cardíacas anormais.",
+                    "Histórico cardíaco anexado automaticamente à ficha da consulta."
                 ],
-                modelSpec: {
-                    badge: "TJBot Med-Assistant",
-                    iconClass: "fas fa-user-doctor",
-                    hardware: "Display Tátil + Assistente de Voz",
-                    sensors: "Câmera HD / Termômetro IR",
-                    purpose: "Consulta de Prontuário & Dosagens"
-                }
-            },
-            industria: {
-                title: "Indústria 5.0 & Manufatura",
-                icon: "fas fa-industry",
-                description: "O TJBot atua ao lado do operário. Com sensores adaptativos, ele detecta se equipamentos estão em sobrecarga ou superaquecidos, informando a temperatura exata e indicando o procedimento recomendado para solucionar o problema antes de causar panes.",
-                features: [
-                    "Detecção de sobrecarga elétrica e superaquecimento em maquinários.",
-                    "Câmera de inspeção visual para indicar se o material está apto ou precisa de troca.",
-                    "Recomendações técnicas instantâneas enviadas diretamente ao operador.",
-                    "Prevenção de acidentes e redução de paradas na linha de produção."
-                ],
-                modelSpec: {
-                    badge: "TJBot Cobot 5.0",
-                    iconClass: "fas fa-robot",
-                    hardware: "Gabinete Anti-Impacto",
-                    sensors: "Sensor Vibracional + Térmico",
-                    purpose: "Inspeção de Materiais & Máquinas"
-                }
-            },
-            laboratorios: {
-                title: "Laboratórios & Pesquisa",
-                icon: "fas fa-flask",
-                description: "Auxilia o pesquisador na verificação contínua do ambiente e dos insumos. Através da câmera de visão computacional, ele avalia se tubos de ensaio, reagentes e vidrarias estão em perfeitas condições de uso.",
-                features: [
-                    "Avaliação rápida da qualidade e conservação de reagentes por câmera.",
-                    "Medição de estabilidade térmica e umidade no local de testes.",
-                    "Armazenamento e resposta rápida de protocolos de experimentos.",
-                    "Envio automático de alertas para manutenção de equipamentos."
-                ],
-                modelSpec: {
-                    badge: "TJBot Lab-Guard",
-                    iconClass: "fas fa-vial-circle-check",
-                    hardware: "Chassi Hermético",
-                    sensors: "Leitor Óptico / Clima / Gás",
-                    purpose: "Validação de Insumos & Clima"
-                }
-            },
-            logistica: {
-                title: "Logística & Estoque",
-                icon: "fas fa-cubes",
-                description: "Atua ao lado do conferente no almoxarifado. O trabalhador pode pedir para o robô avaliar se caixas ou estruturas estão danificadas e checar no sistema a localização exata de itens armazenados.",
-                features: [
-                    "Leitura visual e detecção de avarias estruturais em caixas e pallets.",
-                    "Localização e checagem de itens por comandos de voz.",
-                    "Alertas de excesso de peso ou empilhamento inadequado.",
-                    "Integração rápida com sistemas de inventário."
-                ],
-                modelSpec: {
-                    badge: "TJBot Cargo-Check",
-                    iconClass: "fas fa-boxes-packing",
-                    hardware: "Braço Articulado Scanner",
-                    sensors: "Câmera 3D / Sensor de Carga",
-                    purpose: "Inspeção de Caixas & Estoque"
-                }
-            },
-            corporativo: {
-                title: "Corporativo & Escritórios",
-                icon: "fas fa-building-shield",
-                description: "Apoia a rotina de escritórios e TI. Responde a dúvidas sobre documentos corporativos, analisa o estado de equipamentos eletrônicos e monitora a temperatura de racks e servidores.",
-                features: [
-                    "Respostas rápidas sobre relatórios e dados corporativos arquivados.",
-                    "Inspeção térmica em servidores, nobreaks e painéis elétricos.",
-                    "Interface por inteligência de voz para suporte ao colaborador.",
-                    "Agendamento de lembretes e tarefas operacionais."
-                ],
-                modelSpec: {
-                    badge: "TJBot Exec-Assistant",
-                    iconClass: "fas fa-laptop-code",
-                    hardware: "Display Neon Interativo",
-                    sensors: "Microfones / Sensor Térmico",
-                    purpose: "Consulta de Arquivos & Suporte"
+                spec: {
+                    badge: "MODO: SENSOR CARDÍACO",
+                    iconClass: "fas fa-heart-circle-bolt",
+                    status: "Leitor de Pulso Ativo",
+                    sensors: "Sensor PPG / Infravermelho",
+                    action: "Medição e Transmissão de BPM"
                 }
             }
         };
 
-        // Função para atualizar o painel interativo
-        function updateSectorDisplay(key) {
-            const data = sectorData[key];
-            const display = document.getElementById('sector-display');
+        // Função para atualizar o simulador
+        function updateSimDisplay(key) {
+            const data = modeData[key];
+            const display = document.getElementById('sim-display');
 
             display.innerHTML = `
-                <div class="sector-info">
+                <div class="sim-info">
                     <h3><i class="${data.icon}"></i> ${data.title}</h3>
                     <p>${data.description}</p>
-                    <ul class="sector-features">
-                        ${data.features.map(feat => `<li><i class="fas fa-circle-check"></i> <span>${feat}</span></li>`).join('')}
+                    <ul class="sim-benefits">
+                        ${data.benefits.map(b => `<li><i class="fas fa-check"></i> <span>${b}</span></li>`).join('')}
                     </ul>
                 </div>
 
-                <div class="robot-visualizer">
-                    <div class="robot-card-graphic">
-                        <i class="${data.modelSpec.iconClass} robot-avatar"></i>
-                        <span class="module-badge">${data.modelSpec.badge}</span>
-                    </div>
-                    <div class="robot-specs-list">
-                        <div><span>MODO DE ATUAÇÃO:</span> <span class="val">${data.modelSpec.purpose}</span></div>
-                        <div><span>MÓDULO HARDWARE:</span> <span class="val">${data.modelSpec.hardware}</span></div>
-                        <div><span>SENSORES ATIVOS:</span> <span class="val">${data.modelSpec.sensors}</span></div>
+                <div class="robot-card-graphic">
+                    <i class="${data.spec.iconClass} robot-avatar"></i>
+                    <span class="robot-status-pill">${data.spec.badge}</span>
+                    <div class="robot-telemetry">
+                        <div><span>STATUS DO SISTEMA:</span> <span class="val">${data.spec.status}</span></div>
+                        <div><span>SENSORES EM USO:</span> <span class="val">${data.spec.sensors}</span></div>
+                        <div><span>AÇÃO EXECUTADA:</span> <span class="val">${data.spec.action}</span></div>
                     </div>
                 </div>
             `;
         }
 
-        // Event listener dos botões das áreas
-        const sectorButtons = document.querySelectorAll('.sector-btn');
-        sectorButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                sectorButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
+        // Listener dos Botões do Simulador
+        const modeButtons = document.querySelectorAll('.mode-btn');
+        modeButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                modeButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
                 
-                const sector = button.getAttribute('data-sector');
-                updateSectorDisplay(sector);
+                const mode = btn.getAttribute('data-mode');
+                updateSimDisplay(mode);
             });
         });
 
-        // Carregar Medicina por padrão
-        updateSectorDisplay('medicina');
+        // Carregar modo inicial
+        updateSimDisplay('consulta');
 
         // Form Submit
         function handleCustomSubmit(e) {
             e.preventDefault();
-            alert("Solicitação enviada com sucesso! A equipe do Projeto Kaizen entrará em contato para detalhar a configuração do seu TJBot.");
+            alert("Sua sugestão de funcionalidade foi enviada! A equipe do Projeto Kaizen analisará a viabilidade do novo módulo do TJBot.");
             e.target.reset();
         }
 
-        // Toggle do Menu Mobile
+        // Menu Mobile Toggle
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('header nav');
 
